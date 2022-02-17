@@ -45,9 +45,9 @@ NOTE: all non-default templates are used by name within `extends`. For example, 
 * Sets timezone to `America/Los_Angeles` to match Side's Office for all schedules
 * Maintains lock file weekly on Monday morning
 
-## Service
+### Service
 
-For backend services
+For backend services and UIs
 
 * Auto-merges non-major NPM dev dependencies off business hours - prevents overlap and need for update with developer's PRs during the day
 * Auto-merges patch NPM dependencies off business hours - prevents overlap and need for update with developer's PRs during the day
