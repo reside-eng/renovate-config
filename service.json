@@ -1,7 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "github>reside-eng/renovate-config"
+    "github>reside-eng/renovate-config",
+    "packages:react",
+    "group:graphql-toolsMonorepo",
+    "group:material-uiMonorepo",
+    "group:storybookMonorepo",
+    "group:nextjsMonorepo"
   ],
   "packageRules": [
     {
@@ -18,13 +23,12 @@
       "automergeStrategy": "squash"
     },
     {
-      "description": "Automerge patch npm dependencies off business hours",
+      "description": "Automerge patch npm dependencies off business hours on weeknights",
       "matchUpdateTypes": ["patch", "pin", "digest"],
       "matchDatasources": ["npm"],
       "matchDepTypes": ["dependencies"],
       "schedule": [
-        "after 8am and before 5am every weekday",
-        "every weekend"
+        "after 10pm and before 8am every weekday"
       ],
       "automerge": true,
       "automergeType": "pr",

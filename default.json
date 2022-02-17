@@ -1,7 +1,9 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base"
+    "config:base",
+    "group:typescript-eslintMonorepo",
+    "group:commitlintMonorepo"
   ],
   "timezone": "America/Los_Angeles",
   "prHourlyLimit": 0,

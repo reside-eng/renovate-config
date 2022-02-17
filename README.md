@@ -44,6 +44,7 @@ NOTE: all non-default templates are used by name within `extends`. For example, 
 * Sets commit type and scope for Github Actions dependency updates
 * Sets timezone to `America/Los_Angeles` to match Side's Office for all schedules
 * Maintains lock file weekly on Monday morning
+* Groups config and `@types/config` updates
 
 ### Service
 
