@@ -25,24 +25,41 @@ Collection of [Renovate config presets](https://docs.renovatebot.com/config-pres
     yarn.lock
     ```
 
-## Config Template Options
+## Config Templates
+
+NOTE: all non-default templates are used by name within `extends`. For example, for the template named "service" you would use the following:
+
+    ```json
+    {
+      "extends": [
+        "github>reside-eng/renovate-config:service"
+      ]
+    }
+    ```
 
 ### Default
 
 * Labels NPM and Github Actions PRs
 * Requires 3 days of stability for npm dependencies (not dev) - during this time npm packages can be unpublished
-* Auto-merges non-major NPM dev dependencies off business hours - prevents overlap and need for update with developer's PRs during the day
-* Auto-merges non-major Github Actions dependencies
+* Sets commit type and scope for Github Actions dependency updates
+* Sets timezone to `America/Los_Angeles` to match Side's Office for all schedules
+* Maintains lock file weekly on Monday morning
 
 ## Service
 
 For backend services
+
+* Auto-merges non-major NPM dev dependencies off business hours - prevents overlap and need for update with developer's PRs during the day
+* Auto-merges patch NPM dependencies off business hours - prevents overlap and need for update with developer's PRs during the day
+* Auto-merges non-major Github Actions off business hours - prevents overlap and need for update with developer's PRs during the day
 
 ### Library
 
 For npm libraries
 
 * Groups minor/patch npm dependencies into 1 weekly release monday morning (to prevent release for every dependency update)
+* Auto-merges non-major dev dependencies
+* Auto-merges non-major Github Actions
 
 ### Action
 
