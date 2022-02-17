@@ -8,7 +8,7 @@
       "description": "Automerge non-major npm dev dependencies off business hours",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDatasources": ["npm"],
-      "matchDepTypes": "devDependencies",
+      "matchDepTypes": ["devDependencies"],
       "schedule": [
         "after 10pm and before 5am every weekday",
         "every weekend"
@@ -21,9 +21,9 @@
       "description": "Automerge patch npm dependencies off business hours",
       "matchUpdateTypes": ["patch", "pin", "digest"],
       "matchDatasources": ["npm"],
-      "matchDepTypes": "dependencies",
+      "matchDepTypes": ["dependencies"],
       "schedule": [
-        "after 10pm and before 5am every weekday",
+        "after 8am and before 5am every weekday",
         "every weekend"
       ],
       "automerge": true,
@@ -33,7 +33,7 @@
     {
       "description": "Automerge non-major Github Actions dependencies off business hours",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "matchDepTypes": "action",
+      "matchDepTypes": ["action"],
       "schedule": [
         "after 10pm and before 5am every weekday",
         "every weekend"

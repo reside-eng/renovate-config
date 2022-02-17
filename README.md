@@ -12,7 +12,7 @@ Collection of [Renovate config presets](https://docs.renovatebot.com/config-pres
     {
       "extends": [
         "github>reside-eng/renovate-config",
-        ":assignee(<TEAM>)"
+        ":reviewer(<TEAM>)"
       ]
     }
     ```
