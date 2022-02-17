@@ -1,0 +1,38 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "github>reside-eng/renovate-config"
+  ],
+  "packageRules": [
+    {
+      "description": "Automerge non-major npm dev dependencies",
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchDatasources": ["npm"],
+      "matchDepTypes": "devDependencies",
+      "automerge": true,
+      "automergeType": "pr",
+      "automergeStrategy": "squash"
+    },
+    {
+      "description": "Weekly npm dependencies maintenance (grouped minor + patch updates)",
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchDatasources": ["npm"],
+      "matchDepTypes": "dependencies",
+      "schedule": [
+        "before 10pm monday"
+      ],
+      "automerge": true,
+      "automergeType": "pr",
+      "automergeStrategy": "squash",
+      "groupName": "Weekly npm maintenance release"
+    },
+    {
+      "description": "Automerge non-major Github Actions dependencies",
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchDepTypes": "action",
+      "automerge": true,
+      "automergeType": "pr",
+      "automergeStrategy": "squash"
+    }
+  ]
+}
