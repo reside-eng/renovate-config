@@ -16,7 +16,11 @@
         "rm -rf ./.github/dependabot.yml || true",
         "echo '\n# Skip assigning dep updates (handled by Renovate)\npackage.json\nyarn.lock' >> ./.github/CODEOWNERS"
       ],
-      "fileFilters": ["renovate.json"],
+      "fileFilters": [
+        "renovate.json",
+        "./.github/dependabot.yml",
+        "./.github/CODEOWNERS"
+      ],
       "executionMode": "update"
     }
   },
