@@ -2,10 +2,12 @@
   "name": "@side/renovate-config",
   "description": "Side Inc. shared renovate config templates",
   "scripts": {
+    "prepare": "husky install",
     "format": "prettier --write ."
   },
   "devDependencies": {
     "@side/prettier-config": "0.0.0",
+    "husky": "7.0.4",
     "lint-staged": "12.3.4",
     "prettier": "2.5.1"
   },

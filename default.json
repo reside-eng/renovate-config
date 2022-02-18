@@ -28,7 +28,7 @@
     {
       "description": "Configure Github Actions dependencies (labels, commit format)",
       "matchDepTypes": ["action"],
-      "labels": ["actions"],
+      "labels": ["github_actions", "ci"],
       "semanticCommitType": "chore",
       "semanticCommitScope": "ci-deps"
     },

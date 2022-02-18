@@ -47,6 +47,7 @@ NOTE: all non-default templates are used by name within `extends`. For example, 
 ```
 
 ### Default
+
 - Extends [`config:base`](https://docs.renovatebot.com/presets-config/#configbase) which includes auto grouping
 - Labels NPM and Github Actions PRs
 - Sets commit type and scope for Github Actions dependency updates
@@ -67,6 +68,7 @@ For applications that are using continuous delivery including backend services a
 - Auto-merges non-major NPM dev dependencies off business hours - prevents overlap and need for update with developer's PRs during the day
 - Auto-merges patch NPM dependencies on weekday mornings before the day starts (after 5am before 8am) - Engineers will be around if bugs arise, but still prevents overlap with daytime PRs
 - Auto-merges non-major Github Actions off business hours - prevents overlap and need for update with developer's PRs during the day
+- Auto-merges minor Side Inc NPM dependencies (Custom Github Actions Covered in auto-merge of all non-major Github Actions)
 
 ### Library
 

@@ -21,10 +21,21 @@
       "automergeStrategy": "squash"
     },
     {
-      "description": "Automerge patch npm dependencies off business hours on weekday mornings",
+      "description": "Automerge patch npm dependencies on weekday mornings",
       "matchUpdateTypes": ["patch", "pin", "digest"],
       "matchDatasources": ["npm"],
       "matchDepTypes": ["dependencies"],
+      "schedule": ["after 5am and before 8am every weekday"],
+      "automerge": true,
+      "automergeType": "pr",
+      "automergeStrategy": "squash"
+    },
+    {
+      "description": "Automerge minor Side Inc. npm dependencies on weekday mornings",
+      "matchUpdateTypes": ["minor"],
+      "matchDatasources": ["npm"],
+      "matchDepTypes": ["dependencies"],
+      "matchPackagePrefixes": ["@side/"],
       "schedule": ["after 5am and before 8am every weekday"],
       "automerge": true,
       "automergeType": "pr",
