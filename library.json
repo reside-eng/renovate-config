@@ -35,11 +35,6 @@
       "automerge": true,
       "automergeType": "pr",
       "automergeStrategy": "squash"
-    },
-    {
-      "matchPackageNames": ["config", "@types/config"],
-      "groupName": "Node config and types",
-      "groupSlug": "node-config"
     }
   ]
 }

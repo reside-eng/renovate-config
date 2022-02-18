@@ -6,7 +6,8 @@
     "group:graphql-toolsMonorepo",
     "group:material-uiMonorepo",
     "group:storybookMonorepo",
-    "group:nextjsMonorepo"
+    "group:nextjsMonorepo",
+    "group:emotionMonorepo"
   ],
   "packageRules": [
     {
@@ -23,12 +24,12 @@
       "automergeStrategy": "squash"
     },
     {
-      "description": "Automerge patch npm dependencies off business hours on weeknights",
+      "description": "Automerge patch npm dependencies off business hours on weekday mornings",
       "matchUpdateTypes": ["patch", "pin", "digest"],
       "matchDatasources": ["npm"],
       "matchDepTypes": ["dependencies"],
       "schedule": [
-        "after 10pm and before 8am every weekday"
+        "after 6am and before 8am every weekday"
       ],
       "automerge": true,
       "automergeType": "pr",

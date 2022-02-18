@@ -39,6 +39,22 @@
       "matchDepTypes": ["dependencies"],
       "excludePackagePatterns": ["^@side"],
       "stabilityDays": 3
+    },
+    {
+      "description": "Skip faker updates (since it is no longer supported)",
+      "matchPackageNames": ["faker", "@types/faker"],
+      "enabled": false
+    },
+    {
+      "matchPackageNames": ["config", "@types/config"],
+      "groupName": "Node config and types",
+      "groupSlug": "node-config"
+    },
+    {
+      "description": "Test Library Monorepo group",
+      "matchPackagePatters": ["^@testing-library"],
+      "groupName": "Testing Library Monorepo",
+      "groupSlug": "testing-library"
     }
   ]
 }
