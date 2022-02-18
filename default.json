@@ -11,6 +11,7 @@
       "executionMode": "update"
     }
   },
+  "onboardingPrTitle": "chore(deps): configure renovate",
   "extends": ["config:base"],
   "timezone": "America/Los_Angeles",
   "prHourlyLimit": 0,
