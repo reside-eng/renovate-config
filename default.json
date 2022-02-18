@@ -28,6 +28,10 @@
       "semanticCommitScope": "ci-deps"
     },
     {
+      "matchDatasources": ["docker"],
+      "labels": ["docker-deps"]
+    },
+    {
       "description": "Require stability of NPM dependencies which are not managed by Side Inc. (since they can be unpublished)",
       "matchDatasources": ["npm"],
       "matchDepTypes": ["dependencies"],
@@ -50,6 +54,12 @@
       "matchPackageNames": ["config", "@types/config"],
       "groupName": "Node config and types",
       "groupSlug": "node-config"
+    },
+    {
+      "description": "LTS Versions Of Node In Docker",
+      "matchPackageNames": ["node"],
+      "matchManagers": ["dockerfile"],
+      "allowedVersions": "16"
     }
   ]
 }
