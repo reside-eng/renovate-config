@@ -1,6 +1,15 @@
-# renovate-config
+<div align="center">
+    <h1>Side Renovate Config</h1>
+    <div>Collection of [Renovate config presets](https://docs.renovatebot.com/config-presets/) used for Side Inc. projects</div>
+    </br>
+</div>
 
-Collection of [Renovate config presets](https://docs.renovatebot.com/config-presets/) used for Side Inc. projects
+<div align="center">
+
+[![Build Status][build-status-image]][build-status-url]
+
+</div>
+
 
 ## Use
 
@@ -69,3 +78,6 @@ For custom Github Action
 
 - Extends Library
 - Builds bundle before commit (since dist is part of git tracking)
+
+[build-status-image]: https://img.shields.io/github/workflow/status/reside-eng/renovate-config/Verify?style=flat-square
+[build-status-url]: https://github.com/reside-eng/renovate-config/actions
