@@ -1,0 +1,51 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "github>reside-eng/renovate-config",
+    "packages:react",
+    "group:graphql-toolsMonorepo",
+    "group:material-uiMonorepo",
+    "group:storybookMonorepo",
+    "group:nextjsMonorepo",
+    "group:emotionMonorepo"
+  ],
+  "packageRules": [
+    {
+      "description": "Automerge non-major npm dev dependencies off business hours",
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchDatasources": ["npm"],
+      "matchDepTypes": ["devDependencies"],
+      "schedule": [
+        "after 10pm and before 5am every weekday",
+        "every weekend"
+      ],
+      "automerge": true,
+      "automergeType": "pr",
+      "automergeStrategy": "squash"
+    },
+    {
+      "description": "Automerge patch npm dependencies off business hours on weekday mornings",
+      "matchUpdateTypes": ["patch", "pin", "digest"],
+      "matchDatasources": ["npm"],
+      "matchDepTypes": ["dependencies"],
+      "schedule": [
+        "after 5am and before 8am every weekday"
+      ],
+      "automerge": true,
+      "automergeType": "pr",
+      "automergeStrategy": "squash"
+    },
+    {
+      "description": "Automerge non-major Github Actions dependencies off business hours",
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchDepTypes": ["action"],
+      "schedule": [
+        "after 10pm and before 5am every weekday",
+        "every weekend"
+      ],
+      "automerge": true,
+      "automergeType": "pr",
+      "automergeStrategy": "squash"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "github>reside-eng/renovate-config:library"
+  ],
+  "allowedPostUpgradeCommands": ["^yarn build"],
+  "postUpgradeTasks": {
+    "commands": ["yarn build"],
+    "fileFilters": ["yarn.lock", "dist/**"],
+    "executionMode": "update"
+  }
+}

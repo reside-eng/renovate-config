@@ -3,20 +3,57 @@
   "extends": [
     "config:base"
   ],
+  "timezone": "America/Los_Angeles",
   "prHourlyLimit": 0,
-  "masterIssue": true,
   "lockFileMaintenance": {
-    "schedule": [
-      "before 9am on monday"
+    "enabled": true,
+    "extends": [
+      "schedule:weekly"
     ]
   },
   "packageRules": [
     {
-      "description": "Automerge non-major updates",
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "automerge": true,
-      "automergeType": "pr",
-      "automergeStrategy": "squash"
+      "description": "Label NPM dev dependencies",
+      "matchDatasources": ["npm"],
+      "matchDepTypes": ["devDependencies"],
+      "labels": ["devDependencies"]
+    },
+    {
+      "description": "Label NPM dependencies",
+      "matchDatasources": ["npm"],
+      "matchDepTypes": ["dependencies"],
+      "labels": ["dependencies"]
+    },
+    {
+      "description": "Configure Github Actions dependencies (labels, commit format)",
+      "matchDepTypes": ["action"],
+      "labels": ["actions"],
+      "semanticCommitType": "chore",
+      "semanticCommitScope": "ci-deps"
+    },
+    {
+      "description": "Require stability of NPM dependencies which are not managed by Side Inc. (since they can be unpublished)",
+      "matchDatasources": ["npm"],
+      "matchDepTypes": ["dependencies"],
+      "excludePackagePatterns": ["^@side"],
+      "stabilityDays": 3
+    },
+    {
+      "description": "Group Side Inc. lint configs",
+      "matchSourceUrlPrefixes": ["https://github.com/reside-eng/lint-config"],
+      "groupName": "Side lint config",
+      "groupSlug": "side-lint-config"
+    },
+    {
+      "description": "Skip faker updates (since it is no longer supported)",
+      "matchPackageNames": ["faker", "@types/faker"],
+      "enabled": false
+    },
+    {
+      "description": "node-config library and types",
+      "matchPackageNames": ["config", "@types/config"],
+      "groupName": "Node config and types",
+      "groupSlug": "node-config"
     }
   ]
 }
