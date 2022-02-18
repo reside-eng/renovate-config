@@ -46,13 +46,14 @@
       "enabled": false
     },
     {
+      "description": "node-config library and types",
       "matchPackageNames": ["config", "@types/config"],
       "groupName": "Node config and types",
       "groupSlug": "node-config"
     },
     {
       "description": "Test Library Monorepo group",
-      "matchPackagePatters": ["^@testing-library"],
+      "matchPackagePrefixes": ["@testing-library/"],
       "groupName": "Testing Library Monorepo",
       "groupSlug": "testing-library"
     }
