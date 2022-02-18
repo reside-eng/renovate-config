@@ -1,9 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base",
-    "group:typescript-eslintMonorepo",
-    "group:commitlintMonorepo"
+    "config:base"
   ],
   "timezone": "America/Los_Angeles",
   "prHourlyLimit": 0,
@@ -41,6 +39,12 @@
       "stabilityDays": 3
     },
     {
+      "description": "Group Side Inc. lint configs",
+      "matchSourceUrlPrefixes": ["https://github.com/reside-eng/lint-config"],
+      "groupName": "Side lint config",
+      "groupSlug": "side-lint-config"
+    },
+    {
       "description": "Skip faker updates (since it is no longer supported)",
       "matchPackageNames": ["faker", "@types/faker"],
       "enabled": false
@@ -50,12 +54,6 @@
       "matchPackageNames": ["config", "@types/config"],
       "groupName": "Node config and types",
       "groupSlug": "node-config"
-    },
-    {
-      "description": "Test Library Monorepo group",
-      "matchPackagePrefixes": ["@testing-library/"],
-      "groupName": "Testing Library Monorepo",
-      "groupSlug": "testing-library"
     }
   ]
 }

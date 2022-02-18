@@ -45,6 +45,7 @@ NOTE: all non-default templates are used by name within `extends`. For example, 
 * Sets timezone to `America/Los_Angeles` to match Side's Office for all schedules
 * Maintains lock file weekly on Monday morning
 * Groups common dependencies including:
+  * All packages in [Side lint-config](https://github.com/reside-eng/lint-config)
   * `config` and `@types/config` updates
   * `@testing-library` monorepo
 * Skips Faker updates since it is no longer supported
