@@ -1,5 +1,16 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "onboardingConfig": {
+    "extends": [
+      "github>reside-eng/renovate-config",
+      "github>reside-eng/renovate-private-npm"
+    ],
+    "postUpgradeTasks": {
+      "commands": ["npm run format --if-present"],
+      "fileFilters": ["renovate.json"],
+      "executionMode": "update"
+    }
+  },
   "extends": ["config:base"],
   "timezone": "America/Los_Angeles",
   "prHourlyLimit": 0,
