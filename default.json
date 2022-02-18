@@ -2,6 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "onboardingPrTitle": "chore(deps): configure renovate",
   "extends": ["config:base"],
+  "ignorePresets": [":prHourlyLimit2"],
   "timezone": "America/Los_Angeles",
   "prHourlyLimit": 0,
   "lockFileMaintenance": {
@@ -36,33 +37,6 @@
       "labels": ["docker-deps"]
     },
     {
-      "description": "Require stability of NPM dependencies which are not managed by Side Inc. (since they can be unpublished)",
-      "matchDatasources": ["npm"],
-      "matchDepTypes": ["dependencies"],
-      "excludePackagePatterns": [
-        "^@side",
-        "^firebase",
-        "^@google",
-        "^google-",
-        "^@apollo",
-        "^@mui"
-      ],
-      "excludePackageNames": [
-        "next",
-        "firebase",
-        "firebase-admin",
-        "firebase-tools",
-        "config",
-        "@types/config",
-        "fastify",
-        "graphql",
-        "lodash",
-        "date-fns"
-      ],
-      "prCreation": "not-pending",
-      "stabilityDays": 3
-    },
-    {
       "description": "Group Side Inc. lint configs",
       "matchSourceUrlPrefixes": ["https://github.com/reside-eng/lint-config"],
       "groupName": "Side lint config",
@@ -84,6 +58,40 @@
       "matchPackageNames": ["node"],
       "matchManagers": ["dockerfile"],
       "allowedVersions": "16"
+    },
+    {
+      "description": "Require stability of NPM dependencies which are not managed by Side Inc., Google or another trusted organization (since they can be unpublished)",
+      "matchDatasources": ["npm"],
+      "matchDepTypes": ["dependencies"],
+      "excludePackagePatterns": [
+        "^@side",
+        "^firebase",
+        "^@google",
+        "^google-",
+        "^@apollo",
+        "^@datadog",
+        "^@emoition",
+        "^@mui"
+      ],
+      "excludePackageNames": [
+        "next",
+        "firebase",
+        "firebase-admin",
+        "firebase-tools",
+        "config",
+        "fastify",
+        "graphql",
+        "lodash",
+        "date-fns",
+        "react",
+        "react-dom",
+        "recoil",
+        "yup",
+        "launchdarkly-react-client-sdk",
+        "pino"
+      ],
+      "prCreation": "not-pending",
+      "stabilityDays": 3
     }
   ]
 }

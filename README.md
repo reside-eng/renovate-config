@@ -47,17 +47,18 @@ NOTE: all non-default templates are used by name within `extends`. For example, 
 ```
 
 ### Default
-
+- Extends [`config:base`](https://docs.renovatebot.com/presets-config/#configbase) which includes auto grouping
 - Labels NPM and Github Actions PRs
-- Requires 3 days of stability for npm dependencies (not dev) which are not managed by Side Inc. - during this window npm packages can be un-published which can break builds
 - Sets commit type and scope for Github Actions dependency updates
 - Sets timezone to `America/Los_Angeles` to match Side's Office for all schedules
 - Maintains lock file weekly on Monday morning
-- Groups common dependencies including:
+- Groups common dependencies which are not already automatically grouped in [recommended](https://docs.renovatebot.com/presets-group/#grouprecommended) and [monorepos](https://docs.renovatebot.com/presets-group/#groupmonorepos) presets including:
   - All packages in [Side lint-config](https://github.com/reside-eng/lint-config)
   - `config` and `@types/config` updates
   - `@testing-library` monorepo
-- Skips Faker updates since it is no longer supported
+- Requires 3 days of stability for npm dependencies (not dev) which are not managed by Side Inc., Google, Apollo, Datadog, or another trusted organization - during this window npm packages can be un-published which can break builds
+- Locks Docker file Node version updates to 16 (other versions will be supported in the future)
+- Skips `faker` and `@types/fake` updates since it is no longer supported
 
 ### Service
 
