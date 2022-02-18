@@ -1,9 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "github>reside-eng/renovate-config",
-    ":pinOnlyDevDependencies"
-  ],
+  "extends": ["github>reside-eng/renovate-config", ":pinOnlyDevDependencies"],
   "packageRules": [
     {
       "description": "Automerge non-major npm dev dependencies",
@@ -19,9 +16,7 @@
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDatasources": ["npm"],
       "matchDepTypes": ["dependencies"],
-      "schedule": [
-        "before 8am monday"
-      ],
+      "schedule": ["before 8am monday"],
       "automerge": true,
       "automergeType": "pr",
       "automergeStrategy": "squash",
