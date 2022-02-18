@@ -1,6 +1,6 @@
 <div align="center">
     <h1>Side Renovate Config</h1>
-    <div>Collection of [Renovate config presets](https://docs.renovatebot.com/config-presets/) used for Side Inc. projects</div>
+    <div>Collection of <a href="https://docs.renovatebot.com/config-presets/">Renovate config presets</a> used for Side Inc. projects</div>
     </br>
 </div>
 
