@@ -2,6 +2,7 @@
   "name": "@side/renovate-config",
   "description": "Side Inc. shared renovate config templates",
   "scripts": {
+    "prepare": "husky install",
     "format": "prettier --write ."
   },
   "devDependencies": {
