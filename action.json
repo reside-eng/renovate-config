@@ -3,7 +3,7 @@
   "extends": ["github>reside-eng/renovate-config:library"],
   "allowedPostUpgradeCommands": ["^yarn build$"],
   "postUpgradeTasks": {
-    "commands": ["^yarn build$"],
+    "commands": ["npm run build"],
     "fileFilters": ["dist/**"],
     "executionMode": "update"
   }
