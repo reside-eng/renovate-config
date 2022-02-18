@@ -36,6 +36,33 @@
       "labels": ["docker-deps"]
     },
     {
+      "description": "Require stability of NPM dependencies which are not managed by Side Inc. (since they can be unpublished)",
+      "matchDatasources": ["npm"],
+      "matchDepTypes": ["dependencies"],
+      "excludePackagePatterns": [
+        "^@side",
+        "^firebase",
+        "^@google",
+        "^google-",
+        "^@apollo",
+        "^@mui"
+      ],
+      "excludePackageNames": [
+        "next",
+        "firebase",
+        "firebase-admin",
+        "firebase-tools",
+        "config",
+        "@types/config",
+        "fastify",
+        "graphql",
+        "lodash",
+        "date-fns"
+      ],
+      "prCreation": "not-pending",
+      "stabilityDays": 3
+    },
+    {
       "description": "Group Side Inc. lint configs",
       "matchSourceUrlPrefixes": ["https://github.com/reside-eng/lint-config"],
       "groupName": "Side lint config",
