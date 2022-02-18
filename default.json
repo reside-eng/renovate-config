@@ -1,29 +1,5 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "onboardingConfig": {
-    "extends": [
-      "github>reside-eng/renovate-config",
-      ":reviewer(platform-tools)"
-    ],
-    "allowedPostUpgradeCommands": [
-      "^npm run [a-z]+ --if-present$",
-      "^rm -rf ./.github/dependabot.yml || true$",
-      "^echo '\n# Skip assigning dep updates (handled by Renovate)\npackage.json\nyarn.lock' >> ./.github/CODEOWNERS$"
-    ],
-    "postUpgradeTasks": {
-      "commands": [
-        "npm run format --if-present",
-        "rm -rf ./.github/dependabot.yml || true",
-        "echo '\n# Skip assigning dep updates (handled by Renovate)\npackage.json\nyarn.lock' >> ./.github/CODEOWNERS"
-      ],
-      "fileFilters": [
-        "renovate.json",
-        "./.github/dependabot.yml",
-        "./.github/CODEOWNERS"
-      ],
-      "executionMode": "update"
-    }
-  },
   "onboardingPrTitle": "chore(deps): configure renovate",
   "extends": ["config:base"],
   "timezone": "America/Los_Angeles",

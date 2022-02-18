@@ -13,6 +13,14 @@
 ## Use
 
 1. Enable [Renovate](https://github.com/renovatebot/renovate) and [renovate-approve](https://github.com/renovatebot/renovate-approve-bot) Github apps on the Repo (approve is important for auto merge!)
+1. Add the following to `CODEOWNERS`:
+
+   ```
+   # Skip assigning dep updates (handled by Renovate)
+   package.json
+   yarn.lock
+   ```
+
 1. Take note of the team/users assigned to `*` in `CODEOWNERS`
 1. Update `renovate.json` in the base of the repo to have team/users from previous step in place of `platform-tools` (seperated by commas):
 
@@ -24,6 +32,9 @@
      ]
    }
    ```
+
+1. Disable Status check requirement for review by code owners
+1. Remove Dependabot config and any workflows which are duplicate because of Dependabot
 
 ## Config Templates
 
