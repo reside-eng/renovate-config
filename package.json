@@ -6,6 +6,7 @@
   },
   "devDependencies": {
     "@side/prettier-config": "0.0.0",
+    "husky": "7.0.4",
     "lint-staged": "12.3.4",
     "prettier": "2.5.1"
   },

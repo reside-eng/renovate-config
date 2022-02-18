@@ -47,6 +47,7 @@ NOTE: all non-default templates are used by name within `extends`. For example, 
 ```
 
 ### Default
+
 - Extends [`config:base`](https://docs.renovatebot.com/presets-config/#configbase) which includes auto grouping
 - Labels NPM and Github Actions PRs
 - Sets commit type and scope for Github Actions dependency updates
