@@ -1,0 +1,18 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["github>reside-eng/renovate-config"],
+  "minor": {
+    "enabled": true
+  },
+  "packageRules": [
+    {
+      "description": "Automerge non-major npm dependencies",
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchDatasources": ["npm"],
+      "matchDepTypes": ["devDependencies", "dependencies"],
+      "automerge": true,
+      "automergeType": "pr",
+      "automergeStrategy": "squash"
+    }
+  ]
+}
