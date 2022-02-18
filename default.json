@@ -5,6 +5,7 @@
       "github>reside-eng/renovate-config",
       "github>reside-eng/renovate-private-npm"
     ],
+    "allowedPostUpgradeCommands": ["npm run format --if-present"],
     "postUpgradeTasks": {
       "commands": ["npm run format --if-present"],
       "fileFilters": ["renovate.json"],
