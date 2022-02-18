@@ -10,38 +10,30 @@
 
 </div>
 
-
 ## Use
 
 1. Enable [Renovate](https://github.com/renovatebot/renovate) and [renovate-approve](https://github.com/renovatebot/renovate-approve-bot) Github apps on the Repo (approve is important for auto merge!)
 1. Take note of the team/users assigned to `*` in `CODEOWNERS`
-1. Create a `renovate.json` in the base of the repo with the following (replace `<TEAM>` with the team/users from previous step without `@`):
+1. Update `renovate.json` in the base of the repo to have team/users from previous step in place of `platform-tools` (seperated by commas):
 
    ```json
    {
-     "extends": ["github>reside-eng/renovate-config", ":reviewer(<TEAM>)"]
+     "extends": [
+       "github>reside-eng/renovate-config",
+       ":reviewer(my-team)" // was :reviewer(platform-tools)
+     ]
    }
-   ```
-
-1. Add the following to `CODEOWNERS`:
-
-   ```
-   # Skip assigning dep updates (handled by Renovate)
-   package.json
-   yarn.lock
    ```
 
 ## Config Templates
 
 NOTE: all non-default templates are used by name within `extends`. For example, for the template named "service" you would use the following:
 
-    ```json
-    {
-      "extends": [
-        "github>reside-eng/renovate-config:service"
-      ]
-    }
-    ```
+```json
+{
+  "extends": ["github>reside-eng/renovate-config:service"]
+}
+```
 
 ### Default
 
