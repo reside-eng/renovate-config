@@ -1,0 +1,43 @@
+name: Verify
+
+on:
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: verify-${{ github.head_ref }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: 16.x
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    if: github.actor != 'dependabot[bot]'
+    timeout-minutes: 15
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'yarn'
+
+      - name: Configure package manager
+        run: |
+          echo Configuring NPM_TOKEN globally for .npmrc
+          npm config set '//registry.npmjs.org/:_authToken' ${{ env.NPM_TOKEN }}
+          npm whoami
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_READ_TOKEN }}
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Verify formatting
+        run: yarn format
