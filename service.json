@@ -15,10 +15,7 @@
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDatasources": ["npm"],
       "matchDepTypes": ["devDependencies"],
-      "schedule": [
-        "after 10pm and before 5am every weekday",
-        "every weekend"
-      ],
+      "schedule": ["after 10pm and before 5am every weekday", "every weekend"],
       "automerge": true,
       "automergeType": "pr",
       "automergeStrategy": "squash"
@@ -28,9 +25,7 @@
       "matchUpdateTypes": ["patch", "pin", "digest"],
       "matchDatasources": ["npm"],
       "matchDepTypes": ["dependencies"],
-      "schedule": [
-        "after 5am and before 8am every weekday"
-      ],
+      "schedule": ["after 5am and before 8am every weekday"],
       "automerge": true,
       "automergeType": "pr",
       "automergeStrategy": "squash"
@@ -39,10 +34,7 @@
       "description": "Automerge non-major Github Actions dependencies off business hours",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDepTypes": ["action"],
-      "schedule": [
-        "after 10pm and before 5am every weekday",
-        "every weekend"
-      ],
+      "schedule": ["after 10pm and before 5am every weekday", "every weekend"],
       "automerge": true,
       "automergeType": "pr",
       "automergeStrategy": "squash"

@@ -1,15 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:base"
-  ],
+  "extends": ["config:base"],
   "timezone": "America/Los_Angeles",
   "prHourlyLimit": 0,
   "lockFileMaintenance": {
     "enabled": true,
-    "extends": [
-      "schedule:weekly"
-    ]
+    "extends": ["schedule:weekly"]
   },
   "packageRules": [
     {
