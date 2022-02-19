@@ -65,7 +65,6 @@
       "matchDepTypes": ["dependencies"],
       "excludePackagePatterns": [
         "^@side",
-        "^firebase",
         "^@google",
         "^google-",
         "^@apollo",
@@ -77,6 +76,7 @@
         "next",
         "firebase",
         "firebase-admin",
+        "firebase-functions",
         "firebase-tools",
         "config",
         "fastify",

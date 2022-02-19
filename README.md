@@ -85,5 +85,11 @@ For custom Github Action
 - Extends Library
 - Builds bundle before commit (since dist is part of git tracking)
 
+### Take Home Assignment
+
+For take home assignment repos
+
+- Automerges all non-major npm and Github Actions dependencies
+
 [build-status-image]: https://img.shields.io/github/workflow/status/reside-eng/renovate-config/Verify?style=flat-square
 [build-status-url]: https://github.com/reside-eng/renovate-config/actions
