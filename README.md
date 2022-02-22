@@ -77,6 +77,20 @@ For npm libraries
 - Groups minor/patch npm dependencies into 1 weekly release monday morning - to prevent release for every dependency update
 - Auto-merges non-major dev dependencies
 - Auto-merges non-major Github Actions
+- Auto-merges `examples` folder non-major npm dependencies weekly on Monday morning
+- Groups `examples` folder major npm dependencies weekly on Monday morning
+
+**NOTE**: [`ignoreModulesAndTests`](https://docs.renovatebot.com/presets-default/#ignoremodulesandtests) is within `ignorePresets` since it includes ignoring of the `examples` folder. `ignorePaths` is used to ignore node modules and tests:
+
+```json
+"ignorePresets": [":ignoreModulesAndTests"],
+"ignorePaths": [
+  "**/node_modules/**",
+  "**/__tests__/**",
+  "**/test/**",
+  "**/tests/**"
+],
+```
 
 ### Action
 

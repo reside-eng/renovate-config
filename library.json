@@ -1,9 +1,16 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["github>reside-eng/renovate-config", ":pinOnlyDevDependencies"],
+  "ignorePresets": [":ignoreModulesAndTests"],
+  "ignorePaths": [
+    "**/node_modules/**",
+    "**/__tests__/**",
+    "**/test/**",
+    "**/tests/**"
+  ],
   "packageRules": [
     {
-      "description": "Automerge non-major npm dev dependencies",
+      "description": "Auto-merge non-major npm dev dependencies",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDatasources": ["npm"],
       "matchDepTypes": ["devDependencies"],
@@ -24,12 +31,42 @@
       "groupSlug": "weekly-npm-maintenance"
     },
     {
-      "description": "Automerge non-major Github Actions dependencies",
+      "description": "Auto-merge non-major Github Actions dependencies",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDepTypes": ["action"],
       "automerge": true,
       "automergeType": "pr",
       "automergeStrategy": "squash"
+    },
+    {
+      "description": "Label examples dependencies.",
+      "matchPaths": ["examples/**/package.json"],
+      "labels": ["examples"],
+      "semanticCommitType": "chore",
+      "semanticCommitScope": "examples"
+    },
+    {
+      "description": "Auto-merge examples folder non-major npm dependencies weekly on Monday morning",
+      "matchPaths": ["examples/**/package.json"],
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchDepTypes": ["npm"],
+      "prCreation": "not-pending",
+      "extends": ["schedule:weekly"],
+      "groupName": "Examples non-major",
+      "groupSlug": "examples-non-major",
+      "automerge": true,
+      "automergeType": "pr",
+      "automergeStrategy": "squash"
+    },
+    {
+      "description": "Group major examples folder npm dependencies weekly on Monday morning",
+      "matchPaths": ["examples/**/package.json"],
+      "matchUpdateTypes": ["major"],
+      "matchDepTypes": ["npm"],
+      "prCreation": "not-pending",
+      "extends": ["schedule:weekly"],
+      "groupName": "Examples major",
+      "groupSlug": "examples-major"
     }
   ]
 }
