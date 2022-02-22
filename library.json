@@ -1,6 +1,13 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["github>reside-eng/renovate-config", ":pinOnlyDevDependencies"],
+  "ignorePresets": [":ignoreModulesAndTests"],
+  "ignorePaths": [
+    "**/node_modules/**",
+    "**/__tests__/**",
+    "**/test/**",
+    "**/tests/**"
+  ],
   "packageRules": [
     {
       "description": "Automerge non-major npm dev dependencies",
@@ -27,6 +34,18 @@
       "description": "Automerge non-major Github Actions dependencies",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDepTypes": ["action"],
+      "automerge": true,
+      "automergeType": "pr",
+      "automergeStrategy": "squash"
+    },
+    {
+      "description": "Automerge non-major examples npm dependencies",
+      "matchPaths": ["examples/**/package.json"],
+      "labels": ["examples"],
+      "semanticCommitType": "chore",
+      "semanticCommitScope": "examples",
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchDepTypes": ["npm"],
       "automerge": true,
       "automergeType": "pr",
       "automergeStrategy": "squash"
