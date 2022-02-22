@@ -39,16 +39,34 @@
       "automergeStrategy": "squash"
     },
     {
-      "description": "Automerge non-major examples npm dependencies",
+      "description": "Label examples dependencies.",
       "matchPaths": ["examples/**/package.json"],
       "labels": ["examples"],
       "semanticCommitType": "chore",
-      "semanticCommitScope": "examples",
+      "semanticCommitScope": "examples"
+    },
+    {
+      "description": "Automerge examples folder non-major npm dependencies weekly on Monday morning",
+      "matchPaths": ["examples/**/package.json"],
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDepTypes": ["npm"],
+      "prCreation": "not-pending",
+      "extends": ["schedule:weekly"],
+      "groupName": "Examples non-major",
+      "groupSlug": "examples-non-major",
       "automerge": true,
       "automergeType": "pr",
       "automergeStrategy": "squash"
+    },
+    {
+      "description": "Group major examples folder npm dependencies weekly on Monday morning",
+      "matchPaths": ["examples/**/package.json"],
+      "matchUpdateTypes": ["major"],
+      "matchDepTypes": ["npm"],
+      "prCreation": "not-pending",
+      "extends": ["schedule:weekly"],
+      "groupName": "Examples major",
+      "groupSlug": "examples-major"
     }
   ]
 }

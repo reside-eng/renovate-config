@@ -78,6 +78,7 @@ For npm libraries
 - Auto-merges non-major dev dependencies
 - Auto-merges non-major Github Actions
 - Auto-merges non-major npm dependencies in examples folder
+- Groups major npm dependencies in examples folder weekly
 
 **NOTE**: `ignoreModulesAndTests` is within `ignorePresets` since it includes ignoring of the examples folder. `ignorePaths` is used to ignore node modules and tests.
 

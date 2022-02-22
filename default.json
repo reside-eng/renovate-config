@@ -17,7 +17,8 @@
       "description": "Label NPM dev dependencies",
       "matchDatasources": ["npm"],
       "matchDepTypes": ["devDependencies"],
-      "labels": ["devDependencies"]
+      "labels": ["devDependencies"],
+      "semanticCommitScope": "dev-deps"
     },
     {
       "description": "Label NPM dependencies",
