@@ -80,7 +80,7 @@ For npm libraries
 - Auto-merges `examples` folder non-major npm dependencies weekly on Monday morning
 - Groups `examples` folder major npm dependencies weekly on Monday morning
 
-**NOTE**: `ignoreModulesAndTests` is within `ignorePresets` since it includes ignoring of the examples folder. `ignorePaths` is used to ignore node modules and tests.
+**NOTE**: [`ignoreModulesAndTests`](https://docs.renovatebot.com/presets-default/#ignoremodulesandtests) is within `ignorePresets` since it includes ignoring of the `examples` folder. `ignorePaths` is used to ignore node modules and tests:
 
 ```json
 "ignorePresets": [":ignoreModulesAndTests"],
