@@ -10,7 +10,7 @@
   ],
   "packageRules": [
     {
-      "description": "Automerge non-major npm dev dependencies",
+      "description": "Auto-merge non-major npm dev dependencies",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDatasources": ["npm"],
       "matchDepTypes": ["devDependencies"],
@@ -31,7 +31,7 @@
       "groupSlug": "weekly-npm-maintenance"
     },
     {
-      "description": "Automerge non-major Github Actions dependencies",
+      "description": "Auto-merge non-major Github Actions dependencies",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDepTypes": ["action"],
       "automerge": true,
@@ -46,7 +46,7 @@
       "semanticCommitScope": "examples"
     },
     {
-      "description": "Automerge examples folder non-major npm dependencies weekly on Monday morning",
+      "description": "Auto-merge examples folder non-major npm dependencies weekly on Monday morning",
       "matchPaths": ["examples/**/package.json"],
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDepTypes": ["npm"],
