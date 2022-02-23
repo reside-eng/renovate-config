@@ -42,6 +42,12 @@
       "automergeStrategy": "squash"
     },
     {
+      "description": "Group redis npm dependency with associated types",
+      "matchPackageNames": ["redis", "@types/redis"],
+      "groupName": "Redis with types",
+      "groupSlug": "redis"
+    },
+    {
       "description": "Automerge non-major Github Actions dependencies off business hours",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDepTypes": ["action"],
