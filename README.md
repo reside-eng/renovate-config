@@ -28,7 +28,7 @@
    {
      "extends": [
        "github>reside-eng/renovate-config",
-       ":reviewer(my-team)" // was :reviewer(platform-tools)
+       ":reviewer(team:my-team)" // was :reviewer(team:platform-tools)
      ]
    }
    ```
