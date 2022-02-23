@@ -49,6 +49,11 @@
       "automerge": true,
       "automergeType": "pr",
       "automergeStrategy": "squash"
+    },
+    {
+      "description": "Ignore Side Inc. private docker image updates (registry auth not yet setup) [PLAT-1660]",
+      "matchPackagePrefixes": ["us-central1-docker.pkg.dev/reside-prod"],
+      "matchManagers": ["dockerfile"]
     }
   ]
 }
