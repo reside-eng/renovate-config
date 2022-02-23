@@ -51,6 +51,12 @@
       "automergeStrategy": "squash"
     },
     {
+      "description": "Lock Postgres Docker image version to 13 to match Cloud SQL [PLAT-1661]",
+      "matchPackageNames": ["postgres"],
+      "matchManagers": ["dockerfile"],
+      "allowedVersions": "13"
+    },
+    {
       "description": "Ignore Side Inc. private docker image updates (registry auth not yet setup) [PLAT-1660]",
       "matchPackagePrefixes": ["us-central1-docker.pkg.dev/reside-prod"],
       "matchManagers": ["dockerfile"]
