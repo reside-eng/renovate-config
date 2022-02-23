@@ -69,6 +69,7 @@ For applications that are using continuous delivery including backend services a
 - Auto-merges patch NPM dependencies on weekday mornings before the day starts (after 5am before 8am) - Engineers will be around if bugs arise, but still prevents overlap with daytime PRs
 - Auto-merges non-major Github Actions off business hours - prevents overlap and need for update with developer's PRs during the day
 - Auto-merges minor Side Inc NPM dependencies (Custom Github Actions Covered in auto-merge of all non-major Github Actions)
+- Ignores Side Inc. private docker image updates (registry auth not yet setup) [PLAT-1660](https://residenetwork.atlassian.net/browse/PLAT-1660)
 
 ### Library
 
