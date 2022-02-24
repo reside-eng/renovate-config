@@ -42,6 +42,15 @@
       "automergeStrategy": "squash",
       "groupName": "Patch npm deps",
       "groupSlug": "patch-npm-deps"
+    },
+    {
+      "description": "Group minor NPM dependencies on Monday mornings",
+      "matchUpdateTypes": ["minor"],
+      "matchDatasources": ["npm"],
+      "matchDepTypes": ["dependencies"],
+      "schedule": ["before 8am monday"],
+      "groupName": "Minor npm deps",
+      "groupSlug": "minor-npm-deps"
     }
   ]
 }
