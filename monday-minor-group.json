@@ -1,0 +1,14 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
+    {
+      "description": "Group minor NPM dependencies on Monday mornings",
+      "matchUpdateTypes": ["minor"],
+      "matchDatasources": ["npm"],
+      "matchDepTypes": ["dependencies"],
+      "schedule": ["before 8am monday"],
+      "groupName": "Minor npm deps",
+      "groupSlug": "minor-npm-deps"
+    }
+  ]
+}

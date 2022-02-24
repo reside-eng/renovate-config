@@ -69,7 +69,7 @@ For applications that are using continuous delivery including backend services a
 - Auto-merges non-major NPM dev dependencies off business hours - prevents overlap and need for update with developer's PRs during the day. Not grouped so that breaks clearly indicate the breaking dependency and new releases aren't triggered.
 - Groups and auto-merges non-major Github Actions off business hours - prevents overlap and need for update with developer's PRs during the day. Grouping since changes aren't likely to be breaking
 - Groups and auto-merges patch NPM dependencies on weekday mornings before the day starts (after 5am before 8am) - Engineers will be around if bugs arise, but still prevents overlap with daytime PRs. Grouped since new release is triggered.
-- Groups minor npm dependencies weekly on Monday morning
+- Groups minor npm dependencies weekly on Monday morning - this will create a single minor release
 
 ### Library
 
