@@ -60,16 +60,16 @@ NOTE: all non-default templates are used by name within `extends`. For example, 
 - Requires 3 days of stability for npm dependencies (not dev) which are not managed by Side Inc., Google, Apollo, Datadog, or another trusted organization - during this window npm packages can be un-published which can break builds
 - Locks Docker file Node version updates to 16 (other versions will be supported in the future)
 - Skips `faker` and `@types/fake` updates since it is no longer supported
+- Ignores Side Inc. private docker image updates (registry auth not yet setup) [PLAT-1660](https://residenetwork.atlassian.net/browse/PLAT-1660)
 
 ### Service
 
 For applications that are using continuous delivery including backend services and UIs
 
-- Auto-merges non-major NPM dev dependencies off business hours - prevents overlap and need for update with developer's PRs during the day
-- Auto-merges patch NPM dependencies on weekday mornings before the day starts (after 5am before 8am) - Engineers will be around if bugs arise, but still prevents overlap with daytime PRs
-- Auto-merges non-major Github Actions off business hours - prevents overlap and need for update with developer's PRs during the day
-- Auto-merges minor Side Inc NPM dependencies (Custom Github Actions Covered in auto-merge of all non-major Github Actions)
-- Ignores Side Inc. private docker image updates (registry auth not yet setup) [PLAT-1660](https://residenetwork.atlassian.net/browse/PLAT-1660)
+- Auto-merges non-major NPM dev dependencies off business hours - prevents overlap and need for update with developer's PRs during the day. Not grouped so that breaks clearly indicate the breaking dependency and new releases aren't triggered.
+- Groups and auto-merges non-major Github Actions off business hours - prevents overlap and need for update with developer's PRs during the day. Grouping since changes aren't likely to be breaking
+- Groups and auto-merges patch NPM dependencies on weekday mornings before the day starts (after 5am before 8am) - Engineers will be around if bugs arise, but still prevents overlap with daytime PRs. Grouped since new release is triggered.
+- Groups minor npm dependencies weekly on Monday morning - this will create a single minor release
 
 ### Library
 

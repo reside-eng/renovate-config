@@ -27,6 +27,7 @@
       "automerge": true,
       "automergeType": "pr",
       "automergeStrategy": "squash",
+      "commitMessageAction": "",
       "groupName": "Weekly npm maintenance release",
       "groupSlug": "weekly-npm-maintenance"
     },
