@@ -2,7 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "github>reside-eng/renovate-config",
-    ":reviewer(@reside-eng/TakeHomeReviewers)"
+    ":reviewer(team:TakeHomeReviewers)"
   ],
   "packageRules": [
     {
