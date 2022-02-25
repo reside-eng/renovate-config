@@ -1,8 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "github>reside-eng/renovate-config:bases/base",
-    "github>reside-eng/renovate-config:bases/private-npm"
+    "github>reside-eng/renovate-config:base",
+    "github>reside-eng/renovate-config:base-private-npm"
   ],
   "ignorePresets": [":ignoreModulesAndTests"],
   "ignorePaths": [
