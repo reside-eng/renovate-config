@@ -1,7 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>reside-eng/renovate-config"],
-  "ignorePresets": [":ignoreModulesAndTests", ":pinOnlyDevDependencies"],
+  "extends": ["github>reside-eng/renovate-config", ":pinOnlyDevDependencies"],
+  "ignorePresets": [":ignoreModulesAndTests"],
   "ignorePaths": [
     "**/node_modules/**",
     "**/__tests__/**",
