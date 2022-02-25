@@ -100,7 +100,7 @@ For npm libraries
 
 For custom Github Action
 
-- Extends Library Base (library settings without private npm)
+- Extends Library
 - Builds bundle before commit (since dist is part of git tracking)
 
 ### Take Home Assignment
