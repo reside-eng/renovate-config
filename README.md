@@ -46,8 +46,6 @@ All non-default presets are used by name within `extends`. For example, for the 
 }
 ```
 
-**NOTE**: Presets which are within the `bases` SHOULD NOT BE USED OUTSIDE OF THIS PROJECT. This folder is meant only for use within other presets in this Repo and will most likely go away in the future.
-
 ### Default
 
 Used by other presets
@@ -110,18 +108,6 @@ For custom Github Action
 For take home assignment repos
 
 - Automerges all non-major npm and Github Actions dependencies
-
-## FAQ
-
-### Why `bases` folder?
-
-`action` preset for custom Github actions must be run on Self Hosted Renovate because of needing to re-build dist as part of commit process. The rebuild requires use of `allowedPostUpgradeCommands` which is currently only available on self-hosted Renovate (which we run in Github actions).
-
-Our current default preset includes `encrypted.npmToken` which is an encrypted version of an npm read token with access to Side Inc. private NPM packages - the encryption is done using Renovate's Public Encrypt app. When running the self hosted version of Renovate we do not have access to the Renovate Cloud private key.
-
-Since there is no way to override the `encrypted` setting, we instead opted to create the bases folder which has base configurations without private npm support and the private-npm preset as it's own file. This way all of the other presets can make use of the base and private-npm where applicable and `action` can opt out of `encrypted.npmToken` then handling including it another way.
-
-This may all go away in the future since we are planning to move to Github Packages instead of private NPM, but this was the best way to prevent needing to update a number of different repos while preserving support for private NPM packages.
 
 [build-status-image]: https://img.shields.io/github/workflow/status/reside-eng/renovate-config/Verify?style=flat-square
 [build-status-url]: https://github.com/reside-eng/renovate-config/actions
