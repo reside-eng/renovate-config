@@ -2,6 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["github>reside-eng/renovate-config:base-library"],
   "allowedPostUpgradeCommands": ["^yarn build$"],
+  "ignorePresets": ["github>reside-eng/renovate-config:private-npm"],
   "postUpgradeTasks": {
     "commands": ["yarn build"],
     "fileFilters": ["dist/**"],
