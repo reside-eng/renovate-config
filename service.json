@@ -48,7 +48,7 @@
       "matchUpdateTypes": ["minor"],
       "matchDatasources": ["npm"],
       "matchDepTypes": ["dependencies"],
-      "schedule": ["before 8am monday"],
+      "schedule": ["before 8am on Monday"],
       "groupName": "Minor npm deps",
       "groupSlug": "minor-npm-deps"
     }
