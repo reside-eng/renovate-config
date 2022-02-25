@@ -36,9 +36,9 @@
 1. Disable Status check requirement for review by code owners
 1. Remove Dependabot config and any workflows which are duplicate because of Dependabot
 
-## Config Templates
+## Config Presets
 
-NOTE: all non-default templates are used by name within `extends`. For example, for the template named "service" you would use the following:
+All non-default presets are used by name within `extends`. For example, for the template named "service" you would use the following:
 
 ```json
 {
@@ -47,6 +47,8 @@ NOTE: all non-default templates are used by name within `extends`. For example, 
 ```
 
 ### Default
+
+Used by other presets
 
 - Extends [`config:base`](https://docs.renovatebot.com/presets-config/#configbase) which includes auto grouping
 - Labels NPM and Github Actions PRs
@@ -61,6 +63,7 @@ NOTE: all non-default templates are used by name within `extends`. For example, 
 - Locks Docker file Node version updates to 16 (other versions will be supported in the future)
 - Skips `faker` and `@types/fake` updates since it is no longer supported
 - Ignores Side Inc. private docker image updates (registry auth not yet setup) [PLAT-1660](https://residenetwork.atlassian.net/browse/PLAT-1660)
+- Support for Side Inc. private NPM dependencies
 
 ### Service
 
