@@ -63,7 +63,7 @@ Used by other presets
 - Locks Docker file Node version updates to 16 (other versions will be supported in the future)
 - Skips `faker` and `@types/fake` updates since it is no longer supported
 - Ignores Side Inc. private docker image updates (registry auth not yet setup) [PLAT-1660](https://residenetwork.atlassian.net/browse/PLAT-1660)
-- Support for Side Inc. private NPM dependency support
+- Support for Side Inc. private NPM dependencies
 
 ### Service
 
