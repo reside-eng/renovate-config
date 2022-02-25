@@ -1,6 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>reside-eng/renovate-config:bases/library-base"],
+  "extends": [
+    "github>reside-eng/renovate-config:bases/library-base#base-for-action-override"
+  ],
   "allowedPostUpgradeCommands": ["^yarn build$"],
   "postUpgradeTasks": {
     "commands": ["yarn build"],
