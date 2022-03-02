@@ -87,6 +87,7 @@
         "recoil",
         "yup",
         "launchdarkly-react-client-sdk",
+        "pdfjs-dist",
         "pino"
       ],
       "prCreation": "not-pending",
