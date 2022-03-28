@@ -88,7 +88,8 @@
         "yup",
         "launchdarkly-react-client-sdk",
         "pdfjs-dist",
-        "pino"
+        "pino",
+        "dd-trace"
       ],
       "prCreation": "not-pending",
       "stabilityDays": 3
