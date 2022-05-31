@@ -54,7 +54,7 @@
       "groupSlug": "minor-npm-deps"
     },
     {
-      "description": "Lock version of dd-trace due to memory leak",
+      "description": "Lock version of dd-trace due to memory leak [PLAT-2236]",
       "matchPackageNames": ["dd-trace"],
       "matchManagers": ["npm"],
       "allowedVersions": "2.6.0"
