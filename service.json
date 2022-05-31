@@ -9,6 +9,7 @@
     "group:nextjsMonorepo",
     "group:emotionMonorepo"
   ],
+  "platformAutomerge": true,
   "packageRules": [
     {
       "description": "Automerge non-major NPM dev dependencies off business hours",
@@ -51,6 +52,12 @@
       "schedule": ["before 8am on Monday"],
       "groupName": "Minor npm deps",
       "groupSlug": "minor-npm-deps"
+    },
+    {
+      "description": "Lock version of dd-trace due to memory leak in v2.7.1 [PLAT-2236]",
+      "matchPackageNames": ["dd-trace"],
+      "matchManagers": ["npm"],
+      "allowedVersions": "2.6.0"
     }
   ]
 }
