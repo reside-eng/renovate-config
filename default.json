@@ -5,6 +5,7 @@
   "ignorePresets": [":prHourlyLimit2"],
   "timezone": "America/Los_Angeles",
   "prHourlyLimit": 0,
+  "platformAutomerge": true,
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true,
