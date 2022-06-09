@@ -58,6 +58,13 @@
       "matchPackageNames": ["dd-trace"],
       "matchManagers": ["npm"],
       "allowedVersions": "2.6.0"
+    },
+    {
+      "description": "Group Fastify and Fastify scoped packages",
+      "matchPackageNames": ["fastify", "fastify-plugin"],
+      "matchPackagePrefixes": ["@fastify/"],
+      "groupName": "Fastify packages",
+      "groupSlug": "fastify-packages"
     }
   ]
 }
