@@ -103,6 +103,10 @@ For custom Github Action
 - Extends Library
 - Builds bundle before commit (since dist is part of git tracking)
 
+### Actions CI
+
+For labeling Github Actions with correct semantic release type and scope as well as apply labels. This was separated into it's own preset so that it can be skipped for repos which may not want this default such as [workflow-templates](https://github.com/reside-eng/workflow-templates) (which has templates in that folder which are not "ci" for that repo)
+
 ### Take Home Assignment
 
 For take home assignment repos
