@@ -44,6 +44,11 @@
       "enabled": false
     },
     {
+      "description": "Skip @faker-js/faker update to v7 (since it is ESM) [PLAT-2487]",
+      "matchPackageNames": ["@faker-js/faker"],
+      "allowedVersions": "<=6.3.1"
+    },
+    {
       "description": "node-config library and types",
       "matchPackageNames": ["config", "@types/config"],
       "groupName": "Node config and types",
