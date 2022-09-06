@@ -58,7 +58,6 @@
     },
     {
       "description": "Group size-limit packages",
-      "matchSourceUrlPrefixes": ["https://github.com/ai/size-limit"],
       "matchPackageNames": ["size-limit"],
       "matchPackagePrefixes": ["@size-limit"],
       "groupName": "Size limit packages",
