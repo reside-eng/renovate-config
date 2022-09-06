@@ -57,6 +57,13 @@
       "groupSlug": "node-config"
     },
     {
+      "description": "Group size-limit packages",
+      "matchPackageNames": ["size-limit"],
+      "matchPackagePrefixes": ["@size-limit"],
+      "groupName": "Size limit packages",
+      "groupSlug": "size-limit"
+    },
+    {
       "description": "LTS Versions Of Node In Docker",
       "matchPackageNames": ["node"],
       "matchManagers": ["dockerfile"],
