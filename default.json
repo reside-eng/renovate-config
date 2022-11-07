@@ -3,6 +3,7 @@
   "onboardingPrTitle": "chore(deps): configure renovate",
   "extends": [
     "config:base",
+    ":semanticCommits",
     "github>reside-eng/renovate-config:private-npm",
     "github>reside-eng/renovate-config:actions-ci"
   ],
