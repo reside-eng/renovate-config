@@ -71,6 +71,11 @@
       "allowedVersions": "16"
     },
     {
+      "description": "Skip config updates (breaking change at 3.3.8)",
+      "matchPackageNames": ["config"],
+      "allowedVersions": "<=3.3.7"
+    },
+    {
       "description": "Require stability of NPM dependencies which are not managed by Side Inc., Google or another trusted organization (since they can be unpublished)",
       "matchDatasources": ["npm"],
       "matchDepTypes": ["dependencies"],
@@ -89,7 +94,6 @@
         "firebase-admin",
         "firebase-functions",
         "firebase-tools",
-        "config",
         "fastify",
         "graphql",
         "lodash",
