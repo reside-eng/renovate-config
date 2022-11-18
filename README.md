@@ -64,6 +64,7 @@ Used by other presets
 - Skips `faker` and `@types/fake` updates since it is no longer supported
 - Ignores Side Inc. private docker image updates (registry auth not yet setup) [PLAT-1660](https://residenetwork.atlassian.net/browse/PLAT-1660)
 - Support for Side Inc. private NPM dependencies
+- Skips `config` updates after 3.3.7 due to [breaking change](https://github.com/node-config/node-config/issues/703)
 
 ### Service
 
