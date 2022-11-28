@@ -59,6 +59,12 @@
       "matchPackagePrefixes": ["@fastify/"],
       "groupName": "Fastify packages",
       "groupSlug": "fastify-packages"
+    },
+    {
+      "description": "Group @mui/x-* packages",
+      "matchPackagePatterns": ["^@mui/x-"],
+      "matchUpdateTypes": ["patch", "minor"],
+      "groupName": "MUI X"
     }
   ]
 }
