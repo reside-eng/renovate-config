@@ -23,7 +23,7 @@
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDatasources": ["npm"],
       "matchDepTypes": ["dependencies"],
-      "schedule": ["before 8am on Monday"],
+      "schedule": ["before 5am on Monday"],
       "automerge": true,
       "automergeType": "pr",
       "automergeStrategy": "squash",

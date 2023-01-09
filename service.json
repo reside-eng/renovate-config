@@ -37,7 +37,7 @@
       "matchUpdateTypes": ["patch", "pin", "digest"],
       "matchDatasources": ["npm"],
       "matchDepTypes": ["dependencies"],
-      "schedule": ["after 5am and before 8am every weekday"],
+      "schedule": ["after 2am and before 5am every weekday"],
       "automerge": true,
       "automergeType": "pr",
       "automergeStrategy": "squash",
@@ -49,7 +49,7 @@
       "matchUpdateTypes": ["minor"],
       "matchDatasources": ["npm"],
       "matchDepTypes": ["dependencies"],
-      "schedule": ["before 8am on Monday"],
+      "schedule": ["before 5am on Monday"],
       "groupName": "Minor npm deps",
       "groupSlug": "minor-npm-deps"
     },
