@@ -19,7 +19,8 @@
       "schedule": ["after 10pm and before 5am every weekday", "every weekend"],
       "automerge": true,
       "automergeType": "pr",
-      "automergeStrategy": "squash"
+      "automergeStrategy": "squash",
+      "updateNotScheduled": false
     },
     {
       "description": "Group and auto-merge non-major Github Actions dependencies off business hours",
@@ -30,7 +31,8 @@
       "automergeType": "pr",
       "automergeStrategy": "squash",
       "groupName": "Non major ci deps",
-      "groupSlug": "non-major-ci-deps"
+      "groupSlug": "non-major-ci-deps",
+      "updateNotScheduled": false
     },
     {
       "description": "Group and auto-merge patch NPM dependencies on weekday mornings",
@@ -42,7 +44,8 @@
       "automergeType": "pr",
       "automergeStrategy": "squash",
       "groupName": "Patch npm deps",
-      "groupSlug": "patch-npm-deps"
+      "groupSlug": "patch-npm-deps",
+      "updateNotScheduled": false
     },
     {
       "description": "Group minor NPM dependencies on Monday mornings",
@@ -51,7 +54,8 @@
       "matchDepTypes": ["dependencies"],
       "schedule": ["before 5am on Monday"],
       "groupName": "Minor npm deps",
-      "groupSlug": "minor-npm-deps"
+      "groupSlug": "minor-npm-deps",
+      "updateNotScheduled": false
     },
     {
       "description": "Group Fastify and Fastify scoped packages",
@@ -64,7 +68,8 @@
       "description": "Group @mui/x-* packages",
       "matchPackagePatterns": ["^@mui/x-"],
       "matchUpdateTypes": ["patch", "minor"],
-      "groupName": "MUI X"
+      "groupName": "MUI X",
+      "updateNotScheduled": false
     }
   ]
 }
