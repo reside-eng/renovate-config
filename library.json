@@ -16,7 +16,8 @@
       "matchDepTypes": ["devDependencies"],
       "automerge": true,
       "automergeType": "pr",
-      "automergeStrategy": "squash"
+      "automergeStrategy": "squash",
+      "updateNotScheduled": false
     },
     {
       "description": "Weekly npm dependencies maintenance (grouped minor + patch updates)",
@@ -29,7 +30,8 @@
       "automergeStrategy": "squash",
       "commitMessageAction": "",
       "groupName": "Weekly npm maintenance release",
-      "groupSlug": "weekly-npm-maintenance"
+      "groupSlug": "weekly-npm-maintenance",
+      "updateNotScheduled": false
     },
     {
       "description": "Auto-merge non-major Github Actions dependencies",
@@ -37,7 +39,8 @@
       "matchDepTypes": ["action"],
       "automerge": true,
       "automergeType": "pr",
-      "automergeStrategy": "squash"
+      "automergeStrategy": "squash",
+      "updateNotScheduled": false
     },
     {
       "description": "Label examples dependencies.",
