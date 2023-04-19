@@ -4,10 +4,14 @@
     "github>reside-eng/renovate-config",
     "packages:react",
     "group:graphql-toolsMonorepo",
-    "group:material-uiMonorepo",
+    "group:graphqlcodegeneratorMonorepo",
     "group:storybookMonorepo",
     "group:nextjsMonorepo",
-    "group:emotionMonorepo"
+    "group:emotionMonorepo",
+    "group:apollo-serverMonorepo",
+    "group:apolloclientMonorepo",
+    "group:react-apolloMonorepo",
+    "group:react-dndMonorepo"
   ],
   "platformAutomerge": true,
   "packageRules": [
