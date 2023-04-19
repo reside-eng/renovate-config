@@ -19,6 +19,13 @@
     "extends": ["schedule:weekly"]
   },
   "packageRules": [
+     {
+      "description": "Ignore engine pinning",
+      "matchPackageNames": ["node"],
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["engines"],
+      "enabled": false
+    },
     {
       "description": "Label NPM dev dependencies",
       "matchDatasources": ["npm"],
