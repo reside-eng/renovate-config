@@ -5,7 +5,9 @@
     "config:base",
     ":semanticCommits",
     "github>reside-eng/renovate-config:private-npm",
-    "github>reside-eng/renovate-config:actions-ci"
+    "github>reside-eng/renovate-config:actions-ci",
+    "group:jestMonorepo",
+    "group:material-uiMonorepo"
   ],
   "rangeStrategy": "pin",
   "ignorePresets": [":prHourlyLimit2"],
@@ -71,6 +73,12 @@
       "matchPackagePrefixes": ["@size-limit"],
       "groupName": "Size limit packages",
       "groupSlug": "size-limit"
+    },
+    {
+      "description": "Group apollo packages",
+      "matchPackagePrefixes": ["@apollo"],
+      "groupName": "Apollo packages",
+      "groupSlug": "apollo"
     },
     {
       "description": "LTS Versions Of Node In Docker",
