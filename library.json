@@ -20,6 +20,15 @@
       "updateNotScheduled": false
     },
     {
+      "description": "Auto-merge non-major build dependencies",
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchDepTypes": ["packageManager", "engines"],
+      "automerge": true,
+      "automergeType": "pr",
+      "automergeStrategy": "squash",
+      "updateNotScheduled": false
+    },
+    {
       "description": "Weekly npm dependencies maintenance (grouped minor + patch updates)",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDatasources": ["npm"],
