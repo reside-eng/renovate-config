@@ -20,7 +20,7 @@
       "updateNotScheduled": false
     },
     {
-      "description": "Auto-merge non-major npm dev dependencies",
+      "description": "Auto-merge non-major build dependencies",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDepTypes": ["packageManager", "engines"],
       "automerge": true,
