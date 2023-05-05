@@ -14,6 +14,7 @@
     "group:react-dndMonorepo"
   ],
   "platformAutomerge": true,
+  "rebaseWhen": "never",
   "packageRules": [
     {
       "description": "Automerge non-major NPM dev dependencies off business hours",

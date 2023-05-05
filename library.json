@@ -8,6 +8,7 @@
     "**/test/**",
     "**/tests/**"
   ],
+  "rebaseWhen": "never",
   "packageRules": [
     {
       "description": "Auto-merge non-major npm dev dependencies",
