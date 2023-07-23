@@ -56,6 +56,8 @@
       "description": "Group and auto-merge minor and patch build dependencies on weekday mornings (package manager, runtime such as Nodejs)",
       "matchUpdateTypes": ["patch", "pin", "digest"],
       "matchDepTypes": ["packageManager", "engines"],
+      "matchDatasources": ["npm"],
+      "matchPackageNames": ["node"],
       "schedule": ["after 2am and before 5am every weekday"],
       "automerge": true,
       "automergeType": "pr",
