@@ -44,7 +44,7 @@
       "matchUpdateTypes": ["patch", "pin", "digest"],
       "matchDatasources": ["npm"],
       "matchDepTypes": ["dependencies"],
-      "schedule": ["after 2am and before 5am every weekday"],
+      "schedule": ["after 5am and before 9am every weekday"],
       "automerge": true,
       "automergeType": "pr",
       "automergeStrategy": "squash",
@@ -53,17 +53,16 @@
       "updateNotScheduled": false
     },
     {
-      "description": "Group and auto-merge minor and patch build dependencies on weekday mornings (package manager, runtime such as Nodejs)",
+      "description": "Group and auto-merge minor and patch package manager, runtime (such as Nodejs) dependencies on weekday mornings.",
       "matchUpdateTypes": ["patch", "pin", "digest"],
       "matchDepTypes": ["packageManager", "engines"],
-      "matchDatasources": ["npm"],
-      "matchPackageNames": ["node"],
-      "schedule": ["after 2am and before 5am every weekday"],
+      "matchPackageNames": ["node", "npm"],
+      "schedule": ["after 5am and before 9am every weekday"],
       "automerge": true,
       "automergeType": "pr",
       "automergeStrategy": "squash",
-      "groupName": "Patch build deps",
-      "groupSlug": "patch-build-deps",
+      "groupName": "Patch packager deps",
+      "groupSlug": "patch-packager-deps",
       "updateNotScheduled": false
     },
     {
