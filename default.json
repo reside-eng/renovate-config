@@ -130,6 +130,11 @@
       "description": "Ignore Side Inc. private docker image updates (registry auth not yet setup) [PLAT-1660]",
       "matchPackagePrefixes": ["us-central1-docker.pkg.dev/reside-prod"],
       "matchManagers": ["dockerfile"]
+    },
+    {
+      "description": "Prevent upgrade of Node above ^18 until platform updates are made (requires container + CI updates) [PLAT-6479, PLAT-6480]",
+      "matchPackageNames": ["node", "@types/node"],
+      "allowedVersions": "^18"
     }
   ]
 }
