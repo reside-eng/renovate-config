@@ -13,6 +13,7 @@
   "ignorePresets": [":prHourlyLimit2"],
   "timezone": "America/Los_Angeles",
   "prHourlyLimit": 0,
+  "prConcurrentLimit": 20,
   "platformAutomerge": true,
   "platformCommit": true,
   "lockFileMaintenance": {
