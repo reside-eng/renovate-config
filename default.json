@@ -22,7 +22,7 @@
     "extends": ["schedule:weekly"]
   },
   "packageRules": [
-     {
+    {
       "description": "Ignore engine pinning",
       "matchPackageNames": ["node"],
       "matchManagers": ["npm"],
@@ -151,6 +151,6 @@
       "groupName": "Patch packager deps",
       "groupSlug": "patch-packager-deps",
       "updateNotScheduled": false
-    },
+    }
   ]
 }
