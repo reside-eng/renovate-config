@@ -22,7 +22,7 @@
     "extends": ["schedule:weekly"]
   },
   "packageRules": [
-     {
+    {
       "description": "Ignore engine pinning",
       "matchPackageNames": ["node"],
       "matchManagers": ["npm"],
@@ -122,7 +122,10 @@
         "launchdarkly-react-client-sdk",
         "pdfjs-dist",
         "pino",
-        "dd-trace"
+        "dd-trace",
+        "yarn",
+        "npm",
+        "node"
       ],
       "prCreation": "not-pending",
       "stabilityDays": 3
@@ -136,6 +139,18 @@
       "description": "Prevent upgrade of Node above ^18 until platform updates are made (requires container + CI updates) [PLAT-6479, PLAT-6480]",
       "matchPackageNames": ["node", "@types/node"],
       "allowedVersions": "^18"
+    },
+    {
+      "description": "Group and auto-merge minor and patch package manager, runtime (such as Nodejs, npm and yarn) dependencies on weekday mornings.",
+      "matchUpdateTypes": ["minor", "patch", "digest"],
+      "matchPackageNames": ["node", "npm", "yarn"],
+      "schedule": ["after 5am and before 9am every weekday"],
+      "automerge": true,
+      "automergeType": "pr",
+      "automergeStrategy": "squash",
+      "groupName": "Patch packager deps",
+      "groupSlug": "patch-packager-deps",
+      "updateNotScheduled": false
     }
   ]
 }
