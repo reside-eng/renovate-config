@@ -136,11 +136,6 @@
       "matchManagers": ["dockerfile"]
     },
     {
-      "description": "Prevent upgrade of Node above ^18 until platform updates are made (requires container + CI updates) [PLAT-6479, PLAT-6480]",
-      "matchPackageNames": ["node", "@types/node"],
-      "allowedVersions": "^18"
-    },
-    {
       "description": "Prevent upgrade of Eslint to v9 until updates are made",
       "matchPackageNames": ["eslint"],
       "allowedVersions": "^8"
