@@ -141,6 +141,11 @@
       "allowedVersions": "^18"
     },
     {
+      "description": "Prevent upgrade of Eslint to v9 until updates are made",
+      "matchPackageNames": ["eslint"],
+      "allowedVersions": "^8"
+    },
+    {
       "description": "Group and auto-merge minor and patch package manager, runtime (such as Nodejs, npm and yarn) dependencies on weekday mornings.",
       "matchUpdateTypes": ["minor", "patch", "digest"],
       "matchPackageNames": ["node", "npm", "yarn"],
