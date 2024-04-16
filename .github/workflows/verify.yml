@@ -39,3 +39,6 @@ jobs:
 
       - name: Verify formatting
         run: yarn lint && yarn format
+
+      - name: Validate configs
+        run: yarn validate

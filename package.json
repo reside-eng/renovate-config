@@ -4,7 +4,11 @@
   "scripts": {
     "format": "prettier --write .",
     "prepare": "husky && husky install",
+    "validate": "renovate-config-validator --strict action.json actions-ci.json default.json private-npm.json service.json take-home-assignment.json",
     "lint": "eslint . --ext .json,.js --max-warnings 0"
+  },
+  "dependencies": {
+    "renovate": "37.301.5"
   },
   "devDependencies": {
     "@side/eslint-config-base": "2.0.2",
