@@ -75,6 +75,14 @@
       "matchUpdateTypes": ["patch", "minor"],
       "groupName": "MUI X",
       "updateNotScheduled": false
+    },
+    {
+      "description": "Group Next.js packages",
+      "matchPackagePrefixes": ["@next/"],
+      "matchPackageNames": ["next"],
+      "matchDepTypes": ["dependencies", "devDependencies"],
+      "groupName": "Next.js",
+      "updateNotScheduled": false
     }
   ]
 }
