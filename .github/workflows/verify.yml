@@ -37,5 +37,9 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
+        # See https://docs.renovatebot.com/config-validation/
+      - name: Validate renovate config
+        run: npx --yes --package renovate -- renovate-config-validator
+
       - name: Verify formatting
         run: yarn lint && yarn format
