@@ -9,7 +9,6 @@
     "group:storybookMonorepo",
     "group:nextjsMonorepo",
     "group:emotionMonorepo",
-    "group:apollo-serverMonorepo",
     "group:apolloclientMonorepo",
     "group:react-apolloMonorepo",
     "group:react-dndMonorepo"
@@ -17,13 +16,6 @@
   "platformAutomerge": true,
   "rebaseWhen": "never",
   "packageRules": [
-    {
-      "description": "Group Fastify and Fastify scoped packages",
-      "matchPackageNames": ["fastify", "fastify-plugin"],
-      "matchPackagePrefixes": ["@fastify/"],
-      "groupName": "Fastify packages",
-      "groupSlug": "fastify-packages"
-    },
     {
       "description": "Group @mui/x-* packages",
       "matchPackagePatterns": ["^@mui/x-"],
