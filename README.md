@@ -36,6 +36,16 @@
 1. Disable Status check requirement for review by code owners
 1. Remove Dependabot config and any workflows which are duplicate because of Dependabot
 
+## Gotchas
+
+### Order Matters
+
+Be aware the order of renovate settings matters! As called out in [the renovate docs](https://arc.net/l/quote/jawszubm), more important rules should come later:
+
+> Renovate evaluates all packageRules and does not stop after the first match. Order your packageRules so the least important rules are at the top, and the most important rules at the bottom. This way important rules override settings from earlier rules if needed.
+
+This is why we have presets for groupings such as group-dep-types.json - so we can have this earlier in the `extends` list and allow for overriding with specificed group settings.
+
 ## Config Presets
 
 All non-default presets are used by name within `extends`. For example, for the template named "service" you would use the following:
@@ -68,7 +78,16 @@ Used by other presets
 
 ### Service
 
-For applications that are using continuous delivery including backend services and UIs
+For applications that backend services such as graph-api or identity-service:
+
+- Auto-merges non-major NPM dev dependencies off business hours - prevents overlap and need for update with developer's PRs during the day. Not grouped so that breaks clearly indicate the breaking dependency and new releases aren't triggered.
+- Groups and auto-merges non-major Github Actions off business hours - prevents overlap and need for update with developer's PRs during the day. Grouping since changes aren't likely to be breaking
+- Groups and auto-merges patch NPM dependencies on weekday mornings before the day starts (after 5am before 8am) - Engineers will be around if bugs arise, but still prevents overlap with daytime PRs. Grouped since new release is triggered.
+- Groups minor npm dependencies weekly on Monday morning - this will create a single minor release
+
+### UI
+
+For applications that are using continuous delivery such as NextJS UIs
 
 - Auto-merges non-major NPM dev dependencies off business hours - prevents overlap and need for update with developer's PRs during the day. Not grouped so that breaks clearly indicate the breaking dependency and new releases aren't triggered.
 - Groups and auto-merges non-major Github Actions off business hours - prevents overlap and need for update with developer's PRs during the day. Grouping since changes aren't likely to be breaking
@@ -113,6 +132,10 @@ For labeling Github Actions with correct semantic release type and scope as well
 For take home assignment repos
 
 - Automerges all non-major npm and Github Actions dependencies
+
+### Group Dep Types
+
+Not meant to be a stand alone - this should only be used within other presets (such as `ui.json` and `service.json`)
 
 [build-status-image]: https://img.shields.io/github/workflow/status/reside-eng/renovate-config/Verify?style=flat-square
 [build-status-url]: https://github.com/reside-eng/renovate-config/actions
