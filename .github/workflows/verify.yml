@@ -39,7 +39,12 @@ jobs:
 
         # See https://docs.renovatebot.com/config-validation/
       - name: Validate renovate config
-        run: npx --yes --package renovate -- renovate-config-validator
+        run: |
+          for filename in $GITHUB_WORKSPACE/*.json; do
+            if [ "$filename" != "package.json" ]; then
+              npx --yes --package renovate -- renovate-config-validator $filename
+            fi
+          done
 
       - name: Verify formatting
         run: yarn lint && yarn format
