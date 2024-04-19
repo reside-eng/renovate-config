@@ -48,4 +48,4 @@ jobs:
           done
 
       - name: Verify formatting
-        run: yarn lint && yarn format
+        run: yarn lint && yarn format:check
