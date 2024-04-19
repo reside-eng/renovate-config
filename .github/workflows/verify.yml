@@ -41,7 +41,8 @@ jobs:
       - name: Validate renovate config
         run: |
           for filename in $GITHUB_WORKSPACE/*.json; do
-            if [ "$filename" != "package.json" ]; then
+            if [[ "$filename" != *"package.json" ]]; then
+              echo "Validating $filename"
               npx --yes --package renovate -- renovate-config-validator $filename
             fi
           done
