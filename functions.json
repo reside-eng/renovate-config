@@ -1,11 +1,5 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["github>reside-eng/renovate-config:service"],
-  "packageRules": [
-    {
-      "description": "Prevent upgrade of Node above ^18 until platform updates are made (requires container + CI updates) [PLAT-6479, PLAT-6480]",
-      "matchPackageNames": ["node", "@types/node"],
-      "allowedVersions": "^18"
-    }
-  ]
+  "packageRules": []
 }
