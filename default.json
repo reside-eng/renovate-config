@@ -43,7 +43,7 @@
       "matchDepTypes": ["dependencies"],
       "labels": ["dependencies"]
     },
-    {"matchDatasources": ["docker"], "labels": ["docker-deps"]},
+    { "matchDatasources": ["docker"], "labels": ["docker-deps"] },
     {
       "description": "Group Side Inc. lint configs",
       "matchSourceUrlPrefixes": ["https://github.com/reside-eng/lint-config"],
