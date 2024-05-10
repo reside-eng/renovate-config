@@ -3,7 +3,7 @@
   "description": "Side Inc. shared renovate config templates",
   "scripts": {
     "format": "prettier --write .",
-    "prepare": "husky",
+    "prepare": "husky && husky install",
     "lint": "eslint . --ext .json,.js --max-warnings 0"
   },
   "devDependencies": {
