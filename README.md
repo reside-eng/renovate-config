@@ -50,7 +50,7 @@ All non-default presets are used by name within `extends`. For example, for the 
 
 Used by other presets
 
-- Extends [`config:base`](https://docs.renovatebot.com/presets-config/#configbase) which includes auto grouping
+- Extends [`config:recommended`](https://docs.renovatebot.com/presets-config/#configrecommended) which includes auto grouping
 - Labels NPM and Github Actions PRs
 - Sets commit type and scope for Github Actions dependency updates
 - Sets timezone to `America/Los_Angeles` to match Side's Office for all schedules
@@ -113,6 +113,12 @@ For labeling Github Actions with correct semantic release type and scope as well
 For take home assignment repos
 
 - Automerges all non-major npm and Github Actions dependencies
+
+## [Config Validation](https://docs.renovatebot.com/config-validation/#config-validation)
+
+```bash
+npx --yes --package renovate -- renovate-config-validator --strict your-config.json
+```
 
 [build-status-image]: https://img.shields.io/github/workflow/status/reside-eng/renovate-config/Verify?style=flat-square
 [build-status-url]: https://github.com/reside-eng/renovate-config/actions

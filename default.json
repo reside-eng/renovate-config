@@ -2,7 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "onboardingPrTitle": "chore(deps): configure renovate",
   "extends": [
-    "config:base",
+    "config:recommended",
     ":semanticCommits",
     "github>reside-eng/renovate-config:private-npm",
     "github>reside-eng/renovate-config:actions-ci",
@@ -43,10 +43,7 @@
       "matchDepTypes": ["dependencies"],
       "labels": ["dependencies"]
     },
-    {
-      "matchDatasources": ["docker"],
-      "labels": ["docker-deps"]
-    },
+    {"matchDatasources": ["docker"], "labels": ["docker-deps"]},
     {
       "description": "Group Side Inc. lint configs",
       "matchSourceUrlPrefixes": ["https://github.com/reside-eng/lint-config"],
@@ -129,7 +126,7 @@
         "node"
       ],
       "prCreation": "not-pending",
-      "stabilityDays": 3
+      "minimumReleaseAge": "3 days"
     },
     {
       "description": "Ignore Side Inc. private docker image updates (registry auth not yet setup) [PLAT-1660]",
