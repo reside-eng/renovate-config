@@ -19,10 +19,10 @@ jobs:
     timeout-minutes: 15
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'yarn'
@@ -37,5 +37,15 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
+        # See https://docs.renovatebot.com/config-validation/
+      - name: Validate renovate config
+        run: |
+          for filename in $GITHUB_WORKSPACE/*.json; do
+            if [[ "$filename" != *"package.json" ]]; then
+              echo "Validating $filename"
+              npx --yes --package renovate -- renovate-config-validator $filename
+            fi
+          done
+
       - name: Verify formatting
-        run: yarn lint && yarn format
+        run: yarn lint && yarn format:check
