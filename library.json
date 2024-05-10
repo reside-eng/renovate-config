@@ -67,14 +67,14 @@
     },
     {
       "description": "Label examples dependencies.",
-      "matchPaths": ["examples/**"],
+      "matchFileNames": ["examples/**"],
       "labels": ["examples"],
       "semanticCommitType": "chore",
       "semanticCommitScope": "examples"
     },
     {
       "description": "Auto-merge examples folder non-major npm dependencies weekly on Monday morning",
-      "matchPaths": ["examples/**"],
+      "matchFileNames": ["examples/**"],
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDepTypes": ["npm"],
       "prCreation": "not-pending",
@@ -87,7 +87,7 @@
     },
     {
       "description": "Group major examples folder npm dependencies weekly on Monday morning",
-      "matchPaths": ["examples/**"],
+      "matchFileNames": ["examples/**"],
       "matchUpdateTypes": ["major"],
       "matchDepTypes": ["npm"],
       "prCreation": "not-pending",
