@@ -56,6 +56,18 @@
       "groupName": "Minor npm deps",
       "groupSlug": "minor-npm-deps",
       "updateNotScheduled": false
+    },
+    {
+      "description": "Group and auto-merge minor and patch package manager, runtime (such as Nodejs, npm and yarn) dependencies on weekday mornings.",
+      "matchUpdateTypes": ["minor", "patch", "digest"],
+      "matchPackageNames": ["node", "npm", "yarn"],
+      "schedule": ["after 5am and before 9am every weekday"],
+      "automerge": true,
+      "automergeType": "pr",
+      "automergeStrategy": "squash",
+      "groupName": "Patch packager deps",
+      "groupSlug": "patch-packager-deps",
+      "updateNotScheduled": false
     }
   ]
 }
