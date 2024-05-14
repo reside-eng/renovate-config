@@ -80,12 +80,6 @@
       "groupSlug": "apollo"
     },
     {
-      "description": "LTS Versions Of Node In Docker",
-      "matchPackageNames": ["node"],
-      "matchManagers": ["dockerfile"],
-      "allowedVersions": "16"
-    },
-    {
       "description": "Skip config updates (breaking change at 3.3.8)",
       "matchPackageNames": ["config"],
       "allowedVersions": "<=3.3.7"
@@ -137,18 +131,6 @@
       "description": "Prevent upgrade of Eslint to v9 until updates are made",
       "matchPackageNames": ["eslint"],
       "allowedVersions": "^8"
-    },
-    {
-      "description": "Group and auto-merge minor and patch package manager, runtime (such as Nodejs, npm and yarn) dependencies on weekday mornings.",
-      "matchUpdateTypes": ["minor", "patch", "digest"],
-      "matchPackageNames": ["node", "npm", "yarn"],
-      "schedule": ["after 5am and before 9am every weekday"],
-      "automerge": true,
-      "automergeType": "pr",
-      "automergeStrategy": "squash",
-      "groupName": "Patch packager deps",
-      "groupSlug": "patch-packager-deps",
-      "updateNotScheduled": false
     }
   ]
 }
