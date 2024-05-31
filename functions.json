@@ -3,7 +3,7 @@
   "extends": ["github>reside-eng/renovate-config:service"],
   "packageRules": [
     {
-      "description": "Skip update to v4 of serverless since (still beta) [PLAT-3438]",
+      "description": "Skip update to v4 of serverless since (still beta) [PLAT-7724]",
       "matchPackageNames": ["serverless"],
       "allowedVersions": "^3.0.0"
     }
