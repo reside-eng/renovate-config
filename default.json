@@ -93,16 +93,10 @@
         "^@google",
         "^google-",
         "^@apollo",
-        "^@datadog",
-        "^@emoition",
-        "^@mui"
+        "^@datadog"
       ],
       "excludePackageNames": [
         "next",
-        "firebase",
-        "firebase-admin",
-        "firebase-functions",
-        "firebase-tools",
         "fastify",
         "graphql",
         "lodash",
@@ -112,7 +106,6 @@
         "recoil",
         "yup",
         "launchdarkly-react-client-sdk",
-        "pdfjs-dist",
         "pino",
         "dd-trace",
         "yarn",
