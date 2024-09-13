@@ -108,7 +108,7 @@
         "launchdarkly-react-client-sdk",
         "pino",
         "dd-trace",
-        "yarn",
+        "@yarnpkg/cli",
         "npm",
         "node"
       ],
