@@ -60,7 +60,8 @@
     {
       "description": "Group and auto-merge minor and patch package manager, runtime (such as Nodejs, npm and yarn) dependencies on weekday mornings.",
       "matchUpdateTypes": ["minor", "patch", "digest"],
-      "matchPackageNames": ["node", "npm", "yarn"],
+      "matchPackageNames": ["node", "npm"],
+      "matchDepNames": ["yarn"],
       "schedule": ["after 5am and before 9am every weekday"],
       "automerge": true,
       "automergeType": "pr",
