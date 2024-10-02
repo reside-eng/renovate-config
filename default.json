@@ -3,9 +3,9 @@
   "onboardingPrTitle": "chore(deps): configure renovate",
   "extends": [
     ":semanticCommits",
-    "config:best-practices",
-    ":pinDigestsDisabled",
-    "config:js-app",
+    "config:recommended",
+    ":configMigration",
+    ":pinAllExceptPeerDependencies",
     "github>reside-eng/renovate-config:private-npm",
     "github>reside-eng/renovate-config:actions-ci"
   ],
