@@ -25,8 +25,7 @@
     {
       "description": "Group and auto-merge minor and patch package manager, runtime engine dependencies on weekday mornings",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "matchDepTypes": ["packageManager", "engines"],
-      "matchPackageNames": ["node", "npm", "yarn"],
+      "matchDepNames": ["yarn", "node", "@types/node"],
       "schedule": ["after 5am and before 9am every weekday"],
       "automerge": true,
       "groupName": "Patch packager deps",
