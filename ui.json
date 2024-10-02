@@ -3,17 +3,8 @@
   "extends": [
     "github>reside-eng/renovate-config:group-dep-types",
     "github>reside-eng/renovate-config",
-    "packages:react",
-    "group:graphql-toolsMonorepo",
-    "group:graphqlcodegeneratorMonorepo",
-    "group:storybookMonorepo",
-    "group:nextjsMonorepo",
-    "group:emotionMonorepo",
-    "group:apolloclientMonorepo",
-    "group:react-apolloMonorepo",
-    "group:react-dndMonorepo"
+    "packages:react"
   ],
-  "platformAutomerge": true,
   "rebaseWhen": "never",
   "packageRules": [
     {

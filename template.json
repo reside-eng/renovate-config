@@ -2,17 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "github>reside-eng/renovate-config:template-default",
-
-    "packages:react",
-    "group:graphql-toolsMonorepo",
-    "group:graphqlcodegeneratorMonorepo",
-    "group:storybookMonorepo",
-    "group:nextjsMonorepo",
-    "group:emotionMonorepo",
-    "group:apollo-serverMonorepo",
-    "group:apolloclientMonorepo",
-    "group:react-apolloMonorepo",
-    "group:react-dndMonorepo"
+    "packages:react"
   ],
   "packageRules": [
     {

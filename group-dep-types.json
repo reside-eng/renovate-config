@@ -1,35 +1,32 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "platformAutomerge": true,
-  "rebaseWhen": "never",
+  "automergeType": "pr",
+  "automergeStrategy": "squash",
   "packageRules": [
     {
-      "description": "Automerge non-major NPM dev dependencies off business hours",
+      "description": "Automerge non-major NPM dev dependencies",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDatasources": ["npm"],
       "matchDepTypes": ["devDependencies"],
       "schedule": [
-        "after 10pm every weekday",
-        "every weekend",
-        "before 5am every weekday"
+        "after 8pm every weekday",
+        "before 8am every weekday",
+        "every weekend"
       ],
       "automerge": true,
-      "automergeType": "pr",
-      "automergeStrategy": "squash",
       "updateNotScheduled": false
     },
     {
-      "description": "Group and auto-merge non-major Github Actions dependencies off business hours",
+      "description": "Group and auto-merge non-major Github Actions dependencies",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDepTypes": ["action"],
       "schedule": [
-        "after 10pm every weekday",
-        "every weekend",
-        "before 5am every weekday"
+        "after 8pm every weekday",
+        "before 8am every weekday",
+        "every weekend"
       ],
       "automerge": true,
-      "automergeType": "pr",
-      "automergeStrategy": "squash",
       "groupName": "Non major ci deps",
       "groupSlug": "non-major-ci-deps",
       "updateNotScheduled": false
@@ -39,12 +36,21 @@
       "matchUpdateTypes": ["patch", "pin", "digest"],
       "matchDatasources": ["npm"],
       "matchDepTypes": ["dependencies"],
-      "schedule": ["after 5am and before 9am every weekday"],
+      "schedule": ["after 5am and before 12pm every weekday"],
       "automerge": true,
-      "automergeType": "pr",
-      "automergeStrategy": "squash",
       "groupName": "Patch npm deps",
       "groupSlug": "patch-npm-deps",
+      "updateNotScheduled": false
+    },
+    {
+      "description": "Group and auto-merge minor and patch package manager, runtime engine dependencies on weekday mornings",
+      "matchUpdateTypes": ["minor", "patch", "digest"],
+      "matchPackageNames": ["node", "npm"],
+      "matchDepNames": ["yarn"],
+      "schedule": ["after 5am and before 12pm every weekday"],
+      "automerge": true,
+      "groupName": "Patch packager deps",
+      "groupSlug": "patch-packager-deps",
       "updateNotScheduled": false
     },
     {
@@ -52,22 +58,9 @@
       "matchUpdateTypes": ["minor"],
       "matchDatasources": ["npm"],
       "matchDepTypes": ["dependencies"],
-      "schedule": ["before 5am on Monday"],
+      "extends": ["schedule:weekly"],
       "groupName": "Minor npm deps",
       "groupSlug": "minor-npm-deps",
-      "updateNotScheduled": false
-    },
-    {
-      "description": "Group and auto-merge minor and patch package manager, runtime (such as Nodejs, npm and yarn) dependencies on weekday mornings.",
-      "matchUpdateTypes": ["minor", "patch", "digest"],
-      "matchPackageNames": ["node", "npm"],
-      "matchDepNames": ["yarn"],
-      "schedule": ["after 5am and before 9am every weekday"],
-      "automerge": true,
-      "automergeType": "pr",
-      "automergeStrategy": "squash",
-      "groupName": "Patch packager deps",
-      "groupSlug": "patch-packager-deps",
       "updateNotScheduled": false
     }
   ]
