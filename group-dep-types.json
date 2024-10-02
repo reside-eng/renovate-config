@@ -5,7 +5,7 @@
   "automergeStrategy": "squash",
   "packageRules": [
     {
-      "description": "Automerge non-major NPM dev dependencies",
+      "description": "Auto-merge non-major NPM dev dependencies",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDatasources": ["npm"],
       "matchDepTypes": ["devDependencies"],
@@ -27,39 +27,19 @@
         "every weekend"
       ],
       "automerge": true,
-      "groupName": "Non major ci deps",
+      "groupName": "Non major CI deps",
       "groupSlug": "non-major-ci-deps",
       "updateNotScheduled": false
     },
     {
-      "description": "Group and auto-merge patch NPM dependencies on weekday mornings",
-      "matchUpdateTypes": ["patch", "pin", "digest"],
+      "description": "Group and auto-merge non-major NPM dependencies on weekday mornings",
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDatasources": ["npm"],
       "matchDepTypes": ["dependencies"],
-      "schedule": ["after 5am and before 12pm every weekday"],
+      "schedule": ["after 5am and before 4pm every weekday"],
       "automerge": true,
-      "groupName": "Patch npm deps",
-      "groupSlug": "patch-npm-deps",
-      "updateNotScheduled": false
-    },
-    {
-      "description": "Group and auto-merge minor and patch package manager, runtime engine dependencies on weekday mornings",
-      "matchUpdateTypes": ["minor", "patch", "digest"],
-      "matchDepNames": ["yarn", "node", "@types/node"],
-      "schedule": ["after 5am and before 12pm every weekday"],
-      "automerge": true,
-      "groupName": "Patch packager deps",
-      "groupSlug": "patch-packager-deps",
-      "updateNotScheduled": false
-    },
-    {
-      "description": "Group minor NPM dependencies on Monday mornings",
-      "matchUpdateTypes": ["minor"],
-      "matchDatasources": ["npm"],
-      "matchDepTypes": ["dependencies"],
-      "extends": ["schedule:weekly"],
-      "groupName": "Minor npm deps",
-      "groupSlug": "minor-npm-deps",
+      "groupName": "Non-Major npm deps",
+      "groupSlug": "non-major-npm-deps",
       "updateNotScheduled": false
     }
   ]

@@ -4,38 +4,16 @@
   "ignorePresets": [":ignoreModulesAndTests"],
   "automergeType": "pr",
   "automergeStrategy": "squash",
+  "automerge": true,
   "packageRules": [
-    {
-      "description": "Auto-merge non-major npm dev dependencies and build dependencies",
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "matchDatasources": ["npm"],
-      "matchDepTypes": ["devDependencies", "packageManager", "engines"],
-      "automerge": true
-    },
     {
       "description": "Weekly npm dependencies maintenance (grouped minor + patch updates)",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDatasources": ["npm"],
       "matchDepTypes": ["dependencies"],
-      "automerge": true,
       "extends": ["schedule:weekly"],
       "groupName": "Weekly npm maintenance release",
       "groupSlug": "weekly-npm-maintenance"
-    },
-    {
-      "description": "Group and auto-merge minor and patch package manager, runtime engine dependencies on weekday mornings",
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "matchDepNames": ["yarn", "node", "@types/node"],
-      "schedule": ["after 5am and before 9am every weekday"],
-      "automerge": true,
-      "groupName": "Patch packager deps",
-      "groupSlug": "patch-packager-deps"
-    },
-    {
-      "description": "Auto-merge non-major Github Actions dependencies",
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "matchDepTypes": ["action"],
-      "automerge": true
     },
     {
       "description": "Auto-merge examples folder non-major npm dependencies weekly on Monday morning",
@@ -45,8 +23,7 @@
       "prCreation": "not-pending",
       "extends": ["schedule:weekly"],
       "groupName": "Examples non-major",
-      "groupSlug": "examples-non-major",
-      "automerge": true
+      "groupSlug": "examples-non-major"
     },
     {
       "description": "Label examples dependencies.",
@@ -64,6 +41,11 @@
       "extends": ["schedule:weekly"],
       "groupName": "Examples major",
       "groupSlug": "examples-major"
+    },
+    {
+      "description": "Disable auto-merge for all major releases",
+      "matchUpdateTypes": ["major"],
+      "automerge": false
     }
   ]
 }
