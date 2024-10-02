@@ -4,6 +4,7 @@
   "extends": [
     ":semanticCommits",
     "config:best-practices",
+    ":pinDigestsDisabled",
     "config:js-app",
     "github>reside-eng/renovate-config:private-npm",
     "github>reside-eng/renovate-config:actions-ci"
