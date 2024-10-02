@@ -3,8 +3,6 @@
   "description": "Side Inc. shared renovate config templates",
   "scripts": {
     "postinstall": "husky",
-    "prepack": "pinst --disable",
-    "postpack": "pinst --enable",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint . --ext .json,.js --max-warnings 0"
@@ -18,7 +16,6 @@
     "eslint-plugin-json": "3.1.0",
     "husky": "9.1.6",
     "lint-staged": "15.2.10",
-    "pinst": "3.0.0",
     "prettier": "3.3.3"
   },
   "prettier": "@side/prettier-config",
