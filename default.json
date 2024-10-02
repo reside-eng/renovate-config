@@ -37,6 +37,7 @@
       "matchDatasources": ["npm"],
       "matchDepTypes": ["dependencies"],
       "matchConfidence": ["low", "neutral"],
+      "excludePackagePatterns": ["^@side"],
       "prCreation": "not-pending",
       "minimumReleaseAge": "3 days"
     },
