@@ -1,76 +1,42 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>reside-eng/renovate-config", ":pinOnlyDevDependencies"],
+  "extends": ["github>reside-eng/renovate-config", "config:js-lib"],
   "ignorePresets": [":ignoreModulesAndTests"],
-  "ignorePaths": [
-    "**/node_modules/**",
-    "**/__tests__/**",
-    "**/test/**",
-    "**/tests/**"
-  ],
-  "rebaseWhen": "never",
+  "automergeType": "pr",
+  "automergeStrategy": "squash",
   "packageRules": [
     {
-      "description": "Auto-merge non-major npm dev dependencies",
+      "description": "Auto-merge non-major npm dev dependencies and build dependencies",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDatasources": ["npm"],
-      "matchDepTypes": ["devDependencies"],
-      "automerge": true,
-      "automergeType": "pr",
-      "automergeStrategy": "squash",
-      "updateNotScheduled": false
-    },
-    {
-      "description": "Auto-merge non-major build dependencies",
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "matchDepTypes": ["packageManager", "engines"],
-      "automerge": true,
-      "automergeType": "pr",
-      "automergeStrategy": "squash",
-      "updateNotScheduled": false
+      "matchDepTypes": ["devDependencies", "packageManager", "engines"],
+      "automerge": true
     },
     {
       "description": "Weekly npm dependencies maintenance (grouped minor + patch updates)",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDatasources": ["npm"],
       "matchDepTypes": ["dependencies"],
-      "schedule": ["before 5am on Monday"],
       "automerge": true,
-      "automergeType": "pr",
-      "automergeStrategy": "squash",
-      "commitMessageAction": "",
+      "extends": ["schedule:weekly"],
       "groupName": "Weekly npm maintenance release",
-      "groupSlug": "weekly-npm-maintenance",
-      "updateNotScheduled": false
+      "groupSlug": "weekly-npm-maintenance"
     },
     {
-      "description": "Group and auto-merge minor and patch package manager, runtime (such as Nodejs, npm and yarn) dependencies on weekday mornings.",
-      "matchUpdateTypes": ["patch", "digest"],
+      "description": "Group and auto-merge minor and patch package manager, runtime engine dependencies on weekday mornings",
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDepTypes": ["packageManager", "engines"],
       "matchPackageNames": ["node", "npm", "yarn"],
       "schedule": ["after 5am and before 9am every weekday"],
       "automerge": true,
-      "automergeType": "pr",
-      "automergeStrategy": "squash",
       "groupName": "Patch packager deps",
-      "groupSlug": "patch-packager-deps",
-      "updateNotScheduled": false
+      "groupSlug": "patch-packager-deps"
     },
     {
       "description": "Auto-merge non-major Github Actions dependencies",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDepTypes": ["action"],
-      "automerge": true,
-      "automergeType": "pr",
-      "automergeStrategy": "squash",
-      "updateNotScheduled": false
-    },
-    {
-      "description": "Label examples dependencies.",
-      "matchFileNames": ["examples/**"],
-      "labels": ["examples"],
-      "semanticCommitType": "chore",
-      "semanticCommitScope": "examples"
+      "automerge": true
     },
     {
       "description": "Auto-merge examples folder non-major npm dependencies weekly on Monday morning",
@@ -81,9 +47,14 @@
       "extends": ["schedule:weekly"],
       "groupName": "Examples non-major",
       "groupSlug": "examples-non-major",
-      "automerge": true,
-      "automergeType": "pr",
-      "automergeStrategy": "squash"
+      "automerge": true
+    },
+    {
+      "description": "Label examples dependencies.",
+      "matchFileNames": ["examples/**"],
+      "labels": ["examples"],
+      "semanticCommitType": "chore",
+      "semanticCommitScope": "examples"
     },
     {
       "description": "Group major examples folder npm dependencies weekly on Monday morning",

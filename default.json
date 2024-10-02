@@ -2,53 +2,43 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "onboardingPrTitle": "chore(deps): configure renovate",
   "extends": [
-    "config:recommended",
     ":semanticCommits",
+    "config:best-practices",
+    "config:js-app",
     "github>reside-eng/renovate-config:private-npm",
-    "github>reside-eng/renovate-config:actions-ci",
-    "group:jestMonorepo",
-    "group:material-uiMonorepo",
-    "workarounds:nodeDockerVersioning"
+    "github>reside-eng/renovate-config:actions-ci"
   ],
-  "rangeStrategy": "pin",
   "ignorePresets": [":prHourlyLimit2"],
   "timezone": "America/Los_Angeles",
   "prHourlyLimit": 0,
-  "prConcurrentLimit": 20,
+  "prConcurrentLimit": 30,
   "platformAutomerge": true,
-  "platformCommit": true,
+  "platformCommit": "enabled",
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true,
     "extends": ["schedule:weekly"]
   },
   "packageRules": [
-    {
-      "description": "Ignore engine pinning",
-      "matchPackageNames": ["node"],
-      "matchManagers": ["npm"],
-      "matchDepTypes": ["engines"],
-      "enabled": false
-    },
-    {
-      "description": "Label NPM dev dependencies",
-      "matchDatasources": ["npm"],
-      "matchDepTypes": ["devDependencies"],
-      "labels": ["devDependencies"],
-      "semanticCommitScope": "dev-deps"
-    },
-    {
-      "description": "Label NPM dependencies",
-      "matchDatasources": ["npm"],
-      "matchDepTypes": ["dependencies"],
-      "labels": ["dependencies"]
-    },
     { "matchDatasources": ["docker"], "labels": ["docker-deps"] },
     {
       "description": "Group Side Inc. lint configs",
       "matchSourceUrlPrefixes": ["https://github.com/reside-eng/lint-config"],
       "groupName": "Side lint config",
       "groupSlug": "side-lint-config"
+    },
+    {
+      "description": "Ignore Side Inc. private docker image updates (registry auth not yet setup) [PLAT-1660]",
+      "matchPackagePrefixes": ["us-central1-docker.pkg.dev/reside-prod"],
+      "matchManagers": ["dockerfile"]
+    },
+    {
+      "description": "Require stability of NPM dependencies with low or neutral merge confidence",
+      "matchDatasources": ["npm"],
+      "matchDepTypes": ["dependencies"],
+      "matchConfidence": ["low", "neutral"],
+      "prCreation": "not-pending",
+      "minimumReleaseAge": "3 days"
     },
     {
       "description": "Skip faker updates (since it is no longer supported)",
@@ -74,51 +64,9 @@
       "groupSlug": "size-limit"
     },
     {
-      "description": "Group apollo packages",
-      "matchPackagePrefixes": ["@apollo"],
-      "groupName": "Apollo packages",
-      "groupSlug": "apollo"
-    },
-    {
       "description": "Skip config updates (breaking change at 3.3.8)",
       "matchPackageNames": ["config"],
       "allowedVersions": "<=3.3.7"
-    },
-    {
-      "description": "Require stability of NPM dependencies which are not managed by Side Inc., Google or another trusted organization (since they can be unpublished)",
-      "matchDatasources": ["npm"],
-      "matchDepTypes": ["dependencies"],
-      "excludePackagePatterns": [
-        "^@side",
-        "^@google",
-        "^google-",
-        "^@apollo",
-        "^@datadog"
-      ],
-      "excludePackageNames": [
-        "next",
-        "fastify",
-        "graphql",
-        "lodash",
-        "date-fns",
-        "react",
-        "react-dom",
-        "recoil",
-        "yup",
-        "launchdarkly-react-client-sdk",
-        "pino",
-        "dd-trace",
-        "@yarnpkg/cli",
-        "npm",
-        "node"
-      ],
-      "prCreation": "not-pending",
-      "minimumReleaseAge": "3 days"
-    },
-    {
-      "description": "Ignore Side Inc. private docker image updates (registry auth not yet setup) [PLAT-1660]",
-      "matchPackagePrefixes": ["us-central1-docker.pkg.dev/reside-prod"],
-      "matchManagers": ["dockerfile"]
     },
     {
       "description": "Prevent upgrade of Eslint to v9 until updates are made",

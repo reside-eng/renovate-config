@@ -3,8 +3,6 @@
   "extends": ["github>reside-eng/renovate-config", "schedule:quarterly"],
   "rangeStrategy": "pin",
   "prConcurrentLimit": 100,
-  "platformAutomerge": true,
-  "platformCommit": true,
   "automerge": true,
   "automergeType": "pr",
   "automergeStrategy": "squash",

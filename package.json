@@ -2,21 +2,24 @@
   "name": "@side/renovate-config",
   "description": "Side Inc. shared renovate config templates",
   "scripts": {
-    "prepare": "husky",
+    "postinstall": "husky",
+    "prepack": "pinst --disable",
+    "postpack": "pinst --enable",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint . --ext .json,.js --max-warnings 0"
   },
   "devDependencies": {
-    "@side/eslint-config-base": "2.1.0",
-    "@side/lint-staged-config": "1.0.0",
-    "@side/prettier-config": "1.0.0",
-    "eslint": "^8.56.0",
+    "@side/eslint-config-base": "2.2.0",
+    "@side/lint-staged-config": "1.1.0",
+    "@side/prettier-config": "1.1.0",
+    "eslint": "^8.57.1",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-json": "3.1.0",
-    "husky": "9.0.11",
-    "lint-staged": "15.2.2",
-    "prettier": "3.2.5"
+    "husky": "9.1.6",
+    "lint-staged": "15.2.10",
+    "pinst": "3.0.0",
+    "prettier": "3.3.3"
   },
   "prettier": "@side/prettier-config",
   "repository": "https://github.com/reside-eng/renovate-config.git",
