@@ -7,7 +7,8 @@
     ":configMigration",
     ":pinAllExceptPeerDependencies",
     "github>reside-eng/renovate-config:private-npm",
-    "github>reside-eng/renovate-config:actions-ci"
+    "github>reside-eng/renovate-config:actions-ci",
+    "customManagers:biomeVersions"
   ],
   "ignorePresets": [":prHourlyLimit2"],
   "timezone": "America/Los_Angeles",
