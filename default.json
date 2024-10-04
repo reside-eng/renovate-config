@@ -65,7 +65,6 @@
         "npm",
         "node"
       ],
-      "prCreation": "not-pending",
       "minimumReleaseAge": "3 days"
     },
     {
