@@ -18,6 +18,7 @@
   "platformCommit": "enabled",
   "automergeType": "pr",
   "automergeStrategy": "squash",
+  "rebaseWhen": "conflicted",
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true,
@@ -66,7 +67,6 @@
         "npm",
         "node"
       ],
-      "prCreation": "not-pending",
       "minimumReleaseAge": "3 days"
     },
     {
@@ -119,6 +119,12 @@
       "description": "Prevent upgrade of Eslint to v9 until updates are made",
       "matchPackageNames": ["eslint"],
       "allowedVersions": "^8"
+    },
+    {
+      "description": "Disable auto-merge for all major releases",
+      "matchUpdateTypes": ["major"],
+      "rebaseWhen": "never",
+      "automerge": false
     }
   ]
 }
