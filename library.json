@@ -5,6 +5,7 @@
   "automergeType": "pr",
   "automergeStrategy": "squash",
   "automerge": true,
+  "rebaseWhen": "auto",
   "packageRules": [
     {
       "description": "Weekly npm dependencies maintenance (grouped minor + patch updates)",
@@ -45,6 +46,7 @@
     {
       "description": "Disable auto-merge for all major releases",
       "matchUpdateTypes": ["major"],
+      "rebaseWhen": "never",
       "automerge": false
     }
   ]
