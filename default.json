@@ -13,7 +13,7 @@
   "ignorePresets": [":prHourlyLimit2"],
   "timezone": "America/Los_Angeles",
   "prHourlyLimit": 0,
-  "prConcurrentLimit": 30,
+  "prConcurrentLimit": 50,
   "platformAutomerge": true,
   "platformCommit": "enabled",
   "automergeType": "pr",
@@ -47,7 +47,8 @@
         "^google-",
         "^@apollo",
         "^@datadog",
-        "^@fastify"
+        "^@fastify",
+        "^@sinclair"
       ],
       "excludePackageNames": [
         "next",
@@ -109,6 +110,13 @@
       "matchPackagePrefixes": ["@size-limit"],
       "groupName": "Size limit packages",
       "groupSlug": "size-limit"
+    },
+    {
+      "description": "Group Fastify and Fastify scoped packages",
+      "matchPackageNames": ["fastify", "fastify-plugin"],
+      "matchPackagePrefixes": ["@fastify/"],
+      "groupName": "Fastify packages",
+      "groupSlug": "fastify-packages"
     },
     {
       "description": "Skip config updates (breaking change at 3.3.8)",

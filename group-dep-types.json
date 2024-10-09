@@ -38,8 +38,6 @@
       "matchDepTypes": ["dependencies"],
       "schedule": ["after 5am and before 4pm every weekday"],
       "automerge": true,
-      "groupName": "Non-Major npm deps",
-      "groupSlug": "non-major-npm-deps",
       "updateNotScheduled": false
     }
   ]

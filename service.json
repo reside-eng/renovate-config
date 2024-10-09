@@ -4,13 +4,5 @@
     "github>reside-eng/renovate-config:group-dep-types",
     "github>reside-eng/renovate-config"
   ],
-  "packageRules": [
-    {
-      "description": "Group Fastify and Fastify scoped packages",
-      "matchPackageNames": ["fastify", "fastify-plugin"],
-      "matchPackagePrefixes": ["@fastify/"],
-      "groupName": "Fastify packages",
-      "groupSlug": "fastify-packages"
-    }
-  ]
+  "packageRules": []
 }
