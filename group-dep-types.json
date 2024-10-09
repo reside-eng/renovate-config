@@ -36,7 +36,7 @@
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDatasources": ["npm"],
       "matchDepTypes": ["dependencies"],
-      "schedule": ["after 5am and before 4pm every weekday"],
+      "schedule": ["before 5am and after 4pm every weekday"],
       "automerge": true,
       "updateNotScheduled": false
     }

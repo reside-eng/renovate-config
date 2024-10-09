@@ -74,7 +74,7 @@
       "description": "Group and auto-merge non-major NodeJS dependencies on weekday mornings",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDepNames": ["node", "@types/node"],
-      "schedule": ["after 5am and before 4pm every weekday"],
+      "schedule": ["before 5am and after 4pm every weekday"],
       "groupName": "Non-major NodeJS deps",
       "groupSlug": "non-major-nodejs-deps",
       "automerge": true
@@ -83,7 +83,7 @@
       "description": "Group and auto-merge non-major Yarn dependencies on weekday mornings",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDepNames": ["yarn"],
-      "schedule": ["after 5am and before 4pm every weekday"],
+      "schedule": ["before 5am and after 4pm every weekday"],
       "groupName": "Non-Major packager deps",
       "groupSlug": "non-major-packager-deps",
       "automerge": true
