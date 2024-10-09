@@ -5,7 +5,6 @@
     "github>reside-eng/renovate-config",
     "packages:react"
   ],
-  "rebaseWhen": "never",
   "packageRules": [
     {
       "description": "Group @mui/x-* packages",
