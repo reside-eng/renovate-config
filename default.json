@@ -48,7 +48,8 @@
         "^@apollo",
         "^@datadog",
         "^@fastify",
-        "^@sinclair"
+        "^@sinclair",
+        "^@mui"
       ],
       "excludePackageNames": [
         "next",

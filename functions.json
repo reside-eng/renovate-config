@@ -1,21 +1,5 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["github>reside-eng/renovate-config:service"],
-  "packageRules": [
-    {
-      "description": "Lock serverless to v3. Serverless will soon be removed and v4 requires license",
-      "matchPackageNames": ["serverless"],
-      "allowedVersions": "^3.39.0"
-    },
-    {
-      "description": "Lock serverless-webpack to v5 to match serverless v3. Serverless will soon be removed and serverless v4 requires license",
-      "matchPackageNames": ["serverless-webpack"],
-      "allowedVersions": "^5.14.2"
-    },
-    {
-      "description": "Lock @serverless/typescript to v3 to match serverless v3. Serverless will soon be removed and serverless v4 requires license",
-      "matchPackageNames": ["@serverless/typescript"],
-      "allowedVersions": "^3.38.0"
-    }
-  ]
+  "packageRules": []
 }
