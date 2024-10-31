@@ -1,5 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["github>reside-eng/renovate-config:service"],
-  "packageRules": []
+  "packageRules": [
+    {
+      "description": "Lock @types/node to Node 20 until 22 is supported by functions runtime (https://cloud.google.com/functions/docs/runtime-support#support_schedule)",
+      "matchPackageNames": ["@types/node"],
+      "allowedVersions": "^20"
+    }
+  ]
 }
