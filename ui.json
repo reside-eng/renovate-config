@@ -12,6 +12,11 @@
       "matchUpdateTypes": ["patch", "minor"],
       "groupName": "MUI X",
       "updateNotScheduled": false
+    },
+    {
+      "matchDepNames": ["next", "@next/bundle-analyzer", "@next/env"],
+      "allowedVersions": "^14.2.16",
+      "description": "Next 15 update blocked because recoil does not support React 19 [PLAT-8597]"
     }
   ]
 }
