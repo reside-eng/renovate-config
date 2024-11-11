@@ -3,7 +3,7 @@
   "extends": ["github>reside-eng/renovate-config:service"],
   "packageRules": [
     {
-      "description": "Lock @types/node to Node 20 until 22 is supported by functions runtime (https://cloud.google.com/functions/docs/runtime-support#support_schedule)",
+      "description": "Lock @types/node and node to Node 20 until 22 is supported by functions runtime (https://cloud.google.com/functions/docs/runtime-support#support_schedule)",
       "matchPackageNames": ["@types/node", "node"],
       "allowedVersions": "^20"
     }
