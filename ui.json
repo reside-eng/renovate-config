@@ -1,16 +1,42 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "github>reside-eng/renovate-config:group-dep-types",
-    "github>reside-eng/renovate-config",
-    "packages:react"
-  ],
+  "extends": ["github>reside-eng/renovate-config", "packages:react"],
   "packageRules": [
     {
       "description": "Group @mui/x-* packages",
       "matchPackagePatterns": ["^@mui/x-"],
       "matchUpdateTypes": ["patch", "minor"],
       "groupName": "MUI X",
+      "updateNotScheduled": false
+    },
+    {
+      "description": "Group and auto-merge non-major NPM dev dependencies",
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchDatasources": ["npm"],
+      "matchDepTypes": ["devDependencies"],
+      "schedule": ["after 9am on monday"],
+      "groupSlug": "non-major-dev-deps",
+      "automerge": true,
+      "updateNotScheduled": false
+    },
+    {
+      "description": "Group and auto-merge non-major Github Actions dependencies",
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchDepTypes": ["action"],
+      "schedule": ["after 9am on monday"],
+      "automerge": true,
+      "groupName": "Non major CI deps",
+      "groupSlug": "non-major-ci-deps",
+      "updateNotScheduled": false
+    },
+    {
+      "description": "Group and auto-merge non-major NPM dependencies on weekday mornings",
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchDatasources": ["npm"],
+      "matchDepTypes": ["dependencies"],
+      "schedule": ["after 9am on monday"],
+      "groupSlug": "non-major-deps",
+      "automerge": true,
       "updateNotScheduled": false
     }
   ]

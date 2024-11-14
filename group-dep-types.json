@@ -9,11 +9,7 @@
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDatasources": ["npm"],
       "matchDepTypes": ["devDependencies"],
-      "schedule": [
-        "after 8pm every weekday",
-        "before 8am every weekday",
-        "every weekend"
-      ],
+      "schedule": ["after 9am on monday"],
       "automerge": true,
       "updateNotScheduled": false
     },
@@ -21,11 +17,7 @@
       "description": "Group and auto-merge non-major Github Actions dependencies",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDepTypes": ["action"],
-      "schedule": [
-        "after 8pm every weekday",
-        "before 8am every weekday",
-        "every weekend"
-      ],
+      "schedule": ["after 9am on monday"],
       "automerge": true,
       "groupName": "Non major CI deps",
       "groupSlug": "non-major-ci-deps",
@@ -36,7 +28,7 @@
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDatasources": ["npm"],
       "matchDepTypes": ["dependencies"],
-      "schedule": ["after 5am and before 4pm every weekday"],
+      "schedule": ["after 9am on monday"],
       "automerge": true,
       "updateNotScheduled": false
     }
