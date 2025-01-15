@@ -10,9 +10,8 @@
     "github>reside-eng/renovate-config:private-npm",
     "github>reside-eng/renovate-config:actions-ci"
   ],
-  "ignorePresets": [":prHourlyLimit2"],
   "timezone": "America/Los_Angeles",
-  "prHourlyLimit": 0,
+  "prHourlyLimit": 2,
   "prConcurrentLimit": 50,
   "platformAutomerge": true,
   "platformCommit": "enabled",
