@@ -4,5 +4,12 @@
     "github>reside-eng/renovate-config:template-default",
     "config:js-lib"
   ],
-  "ignorePresets": [":ignoreModulesAndTests"]
+  "ignorePresets": [":ignoreModulesAndTests"],
+  "packageRules": [
+    {
+      "description": "Skip upgrade to React 19 until all applications are off of Recoil",
+      "matchPackageNames": ["react"],
+      "allowedVersions": "^18"
+    }
+  ]
 }
