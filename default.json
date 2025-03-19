@@ -127,7 +127,7 @@
     {
       "description": "Prevent upgrade of dd-trace to v5.41.1",
       "matchPackageNames": ["dd-trace"],
-      "allowedVersions": "!/(5.41.0|5.41.1|5.42.0)/"
+      "allowedVersions": "<=5.40.0"
     },
     {
       "description": "Disable auto-merge for all major releases",
