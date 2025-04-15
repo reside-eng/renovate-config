@@ -125,9 +125,14 @@
       "allowedVersions": "^8"
     },
     {
-      "description": "Prevent upgrade of dd-trace to v5.41.1 and later versions",
+      "description": "Prevent upgrade of dd-trace from v5.41.1 to 5.47.0 (know issues). Also disable auto-merge and wait for 30 days before creating the PR.",
       "matchPackageNames": ["dd-trace"],
-      "allowedVersions": "<=5.40.0"
+      "allowedVersions": "<=5.40.0 || >5.47.0",
+      "automerge": false,
+      "minimumReleaseAge": "30 days",
+      "prBodyNotes": [
+        "Please verify that there is no reported issues for the current version update: https://github.com/DataDog/dd-trace-js/issues"
+      ]
     },
     {
       "description": "Disable auto-merge for all major releases",
