@@ -135,11 +135,6 @@
       ]
     },
     {
-      "description": "Pause @side/next-zendesk-sdk while testing refactor",
-      "matchPackageNames": ["@side/next-zendesk-sdk"],
-      "allowedVersions": "<=0.10.10"
-    },
-    {
       "description": "Disable auto-merge for all major releases",
       "matchUpdateTypes": ["major"],
       "rebaseWhen": "never",
