@@ -125,9 +125,9 @@
       "allowedVersions": "^8"
     },
     {
-      "description": "Prevent upgrade of dd-trace from v5.41.1 to 5.47.0 (know issues). Also disable auto-merge and wait for 30 days before creating the PR.",
+      "description": "Prevent upgrade of dd-trace from v5.41.1 to latest (temporarily). Also disable auto-merge and wait for 30 days before creating the PR.",
       "matchPackageNames": ["dd-trace"],
-      "allowedVersions": "<=5.40.0 || >5.47.0",
+      "allowedVersions": "<=5.40.0",
       "automerge": false,
       "minimumReleaseAge": "30 days",
       "prBodyNotes": [
