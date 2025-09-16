@@ -27,6 +27,11 @@
   "packageRules": [
     { "matchDatasources": ["docker"], "labels": ["docker-deps"] },
     {
+      "matchDatasources": ["docker"],
+      "labels": ["redis"],
+      "allowedVersions": "6.x"
+    },
+    {
       "description": "Group Side Inc. lint configs",
       "matchSourceUrlPrefixes": ["https://github.com/reside-eng/lint-config"],
       "groupName": "Side lint config",
