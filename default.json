@@ -27,8 +27,9 @@
   "packageRules": [
     { "matchDatasources": ["docker"], "labels": ["docker-deps"] },
     {
+      "description": "Lock redis to 6.x to match our cloud instances",
       "matchDatasources": ["docker"],
-      "labels": ["redis"],
+      "matchPackageNames": ["redis"],
       "allowedVersions": "6.x"
     },
     {
