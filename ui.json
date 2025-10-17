@@ -39,6 +39,12 @@
       "groupSlug": "non-major-deps",
       "automerge": true,
       "updateNotScheduled": false
+    },
+    {
+      "description": "Lock @apollo/client to 3.x (since v4 is a major breaking change)",
+      "matchDatasources": ["npm"],
+      "matchPackageNames": ["@apollo/client"],
+      "allowedVersions": "3.x"
     }
   ]
 }
