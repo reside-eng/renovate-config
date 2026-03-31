@@ -1,7 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "onboardingPrTitle": "chore(deps): configure renovate",
-  "enabled": false,
   "extends": [
     ":semanticCommits",
     "config:recommended",
