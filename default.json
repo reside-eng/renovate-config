@@ -143,7 +143,7 @@
     {
       "description": "Prevent upgrade to axios 1.14.x (security compromised)",
       "matchPackageNames": ["axios"],
-      "allowedVersions": "<1.14.0"
+      "allowedVersions": "<=1.14.0"
     },
     {
       "description": "Disable auto-merge for all major releases",
