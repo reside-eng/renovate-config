@@ -52,31 +52,17 @@
         "^@side",
         "^@google",
         "^google-",
-        "^@apollo",
-        "^@datadog",
-        "^@fastify",
-        "^@sinclair",
-        "^@mui"
+        "^@datadog"
       ],
       "excludePackageNames": [
         "next",
-        "fastify",
-        "fastify-plugin",
-        "graphql",
-        "lodash",
-        "date-fns",
         "react",
         "react-dom",
-        "recoil",
-        "yup",
-        "launchdarkly-react-client-sdk",
-        "pino",
-        "dd-trace",
         "@yarnpkg/cli",
         "npm",
         "node"
       ],
-      "minimumReleaseAge": "3 days"
+      "minimumReleaseAge": "14 days"
     },
     {
       "description": "Group and auto-merge non-major NodeJS dependencies on weekday mornings",
