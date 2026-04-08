@@ -127,6 +127,16 @@
       "allowedVersions": "<=1.14.0"
     },
     {
+      "description": "Prevent upgrade to @side/fastify-identity-auth 2.0.20 (accidental minor, should have been major)",
+      "matchPackageNames": ["@side/fastify-identity-auth"],
+      "allowedVersions": "!=2.0.20"
+    },
+    {
+      "description": "Prevent upgrade to @side/identity-token 5.1.24 (accidental minor, should have been major)",
+      "matchPackageNames": ["@side/identity-token"],
+      "allowedVersions": "!=5.1.24"
+    },
+    {
       "description": "Disable auto-merge for all major releases",
       "matchUpdateTypes": ["major"],
       "rebaseWhen": "never",
