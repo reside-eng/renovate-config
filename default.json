@@ -46,7 +46,7 @@
     {
       "description": "Require stability of NPM dependencies which are not managed by Side Inc., Google or another trusted organization (since they can be unpublished)",
       "matchDatasources": ["npm"],
-      "matchDepTypes": ["dependencies"],
+      "matchDepTypes": ["dependencies", "devDependencies"],
       "excludePackagePatterns": ["^@side", "^@google", "^google-", "^@datadog"],
       "excludePackageNames": [
         "next",
