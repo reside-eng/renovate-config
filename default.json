@@ -25,6 +25,11 @@
     "extends": ["schedule:weekly"]
   },
   "packageRules": [
+    {
+      "description": "Keep GitHub Actions tag refs floating (override :pinAllExceptPeerDependencies for the github-actions manager). Renovate v43.138.0 (2026-04-21) started honouring rangeStrategy:pin for github-actions, which caused it to pin floating major tags like @v11 to specific patch tags (@v11.15.1). Combined with our auto-merge rules that accept update type 'pin', this produced an immortal auto-merged pin-dependencies PR per repo, and an infinite release loop on workflow-templates via its own self-references. SHA pinning of third-party actions is still enforced per-repo via pinDigests:true.",
+      "matchManagers": ["github-actions"],
+      "rangeStrategy": "replace"
+    },
     { "matchDatasources": ["docker"], "labels": ["docker-deps"] },
     {
       "description": "Lock redis to 6.x to match our cloud instances",
