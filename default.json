@@ -64,6 +64,17 @@
       "minimumReleaseAge": "14 days"
     },
     {
+      "description": "Require stability of GitHub Actions which are not managed by Side Inc. (since release tags can be force-moved to point at malicious code)",
+      "matchManagers": ["github-actions"],
+      "matchPackageNames": ["!/^reside-eng\\//"],
+      "minimumReleaseAge": "14 days"
+    },
+    {
+      "description": "Require stability of Docker images (since image tags can be re-pushed to point at malicious content)",
+      "matchDatasources": ["docker"],
+      "minimumReleaseAge": "14 days"
+    },
+    {
       "description": "Auto-merge minor/patch/pin/digest updates for high-confidence GitHub Action publishers (trusted vendor orgs only). Other third-party actions require manual review.",
       "matchManagers": ["github-actions"],
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
