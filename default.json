@@ -26,9 +26,15 @@
   },
   "packageRules": [
     {
-      "description": "Keep GitHub Actions tag refs floating (override :pinAllExceptPeerDependencies for the github-actions manager). Renovate v43.138.0 (2026-04-21) started honouring rangeStrategy:pin for github-actions, which caused it to pin floating major tags like @v11 to specific patch tags (@v11.15.1). Combined with our auto-merge rules that accept update type 'pin', this produced an immortal auto-merged pin-dependencies PR per repo, and an infinite release loop on workflow-templates via its own self-references. SHA pinning of third-party actions is still enforced per-repo via pinDigests:true.",
+      "description": "Keep GitHub Actions tag refs floating (override :pinAllExceptPeerDependencies for the github-actions manager). Renovate v43.138.0 (2026-04-21) started honouring rangeStrategy:pin for github-actions, which rewrote floating major tags like @v11 to specific patch tags (@v11.15.1). Combined with our auto-merge rules that accept update type 'pin', this produced an immortal auto-merged pin-dependencies PR per repo and an infinite release loop on workflow-templates via its own self-references. SHA pinning of third-party actions is enforced separately via the pinDigests rule below.",
       "matchManagers": ["github-actions"],
       "rangeStrategy": "replace"
+    },
+    {
+      "description": "Pin third-party GitHub Action digests (SHA + version comment). Renovate rewrites any tag-based third-party action ref to owner/repo@<sha> # vX.Y.Z so subsequent updates flow via SHA bumps. Excludes reside-eng first-party actions/workflows which stay on floating major tags (e.g. @v11) — those are managed via controlled releases.",
+      "matchManagers": ["github-actions"],
+      "matchPackageNames": ["!/^reside-eng\\//"],
+      "pinDigests": true
     },
     { "matchDatasources": ["docker"], "labels": ["docker-deps"] },
     {
@@ -95,6 +101,13 @@
       "automergeStrategy": "squash"
     },
     {
+      "description": "Group non-major GitHub Action updates into one PR org-wide (single group name for consistency). Auto-merge is governed by the publisher whitelist rule above. Per-category presets (group-dep-types.json for services/functions, ui.json for UIs) add a schedule on top of this grouping without re-defining the group name.",
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "groupName": "Non major action deps",
+      "groupSlug": "non-major-action-deps"
+    },
+    {
       "description": "Auto-merge minor/patch/digest updates for high-confidence Docker image publishers (official Docker library + trusted vendor orgs). Other images require manual review.",
       "matchDatasources": ["docker"],
       "matchUpdateTypes": ["minor", "patch", "digest"],
@@ -132,6 +145,7 @@
     },
     {
       "description": "Group and auto-merge non-major NodeJS dependencies on weekday mornings",
+      "matchManagers": ["npm"],
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDepNames": ["node", "@types/node"],
       "schedule": ["after 5am and before 4pm every weekday"],
@@ -141,6 +155,7 @@
     },
     {
       "description": "Group and auto-merge non-major Yarn dependencies on weekday mornings",
+      "matchManagers": ["npm"],
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDepNames": ["yarn"],
       "schedule": ["after 5am and before 4pm every weekday"],
