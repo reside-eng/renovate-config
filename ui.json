@@ -21,11 +21,10 @@
       "updateNotScheduled": false
     },
     {
-      "description": "Group and auto-merge non-major Github Actions dependencies",
+      "description": "Group non-major Github Actions dependencies (auto-merge governed by the shared publisher whitelist in default.json)",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDepTypes": ["action"],
       "schedule": ["after 9am on monday"],
-      "automerge": true,
       "groupName": "Non major CI deps",
       "groupSlug": "non-major-ci-deps",
       "updateNotScheduled": false
