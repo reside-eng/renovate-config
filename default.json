@@ -228,6 +228,13 @@
       "matchUpdateTypes": ["major"],
       "rebaseWhen": "never",
       "automerge": false
+    },
+    {
+      "description": "Treat pre-1.0 minor bumps as breaking. Per semver convention (and npm caret semantics, where ^0.9.6 resolves to >=0.9.6 <0.10.0), a 0.x → 0.(x+1) bump is a breaking change. Renovate classifies these as 'minor' by default, so without this rule they bypass the major-release automerge guard.",
+      "matchCurrentVersion": "/^0\\./",
+      "matchUpdateTypes": ["minor"],
+      "rebaseWhen": "never",
+      "automerge": false
     }
   ]
 }
