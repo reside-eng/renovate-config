@@ -2,26 +2,22 @@
   "name": "@side/renovate-config",
   "description": "Side Inc. shared renovate config templates",
   "scripts": {
-    "postinstall": "husky",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "lint": "eslint . --ext .json,.js --max-warnings 0"
+    "check": "biome check --error-on-warnings",
+    "check:fix": "biome check --write --error-on-warnings",
+    "check:fix:staged": "biome check --write --error-on-warnings --staged --no-errors-on-unmatched",
+    "lint": "biome lint --error-on-warnings",
+    "format": "biome format --write --error-on-warnings",
+    "format:check": "biome format --error-on-warnings"
   },
   "devDependencies": {
-    "@side/eslint-config-base": "2.2.0",
-    "@side/lint-staged-config": "1.1.0",
-    "@side/prettier-config": "1.1.0",
-    "eslint": "^8.57.1",
-    "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-json": "3.1.0",
-    "husky": "9.1.6",
-    "lint-staged": "15.2.10",
-    "prettier": "3.3.3"
+    "@biomejs/biome": "2.4.15",
+    "@commitlint/cli": "21.0.1",
+    "@side/commitlint-config": "1.1.1",
+    "lefthook": "2.1.6"
   },
-  "prettier": "@side/prettier-config",
   "repository": "https://github.com/reside-eng/renovate-config.git",
   "author": "Side Inc",
   "license": "UNLICENSED",
   "private": true,
-  "packageManager": "yarn@4.13.0"
+  "packageManager": "yarn@4.14.1"
 }
