@@ -5,3 +5,6 @@
 # Skip assigning dep updates (handled by Renovate)
 package.json
 yarn.lock
+
+# Require Devops approval for yarn config changes
+.yarnrc.yml @reside-eng/devops
