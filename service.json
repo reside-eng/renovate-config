@@ -4,5 +4,12 @@
     "github>reside-eng/renovate-config:group-dep-types",
     "github>reside-eng/renovate-config"
   ],
-  "packageRules": []
+  "packageRules": [
+    {
+      "description": "Pin node Docker image to 24.15.0 — 24.16.0 has a memory leak",
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["node"],
+      "allowedVersions": "24.15.0"
+    }
+  ]
 }
