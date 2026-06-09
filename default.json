@@ -38,6 +38,12 @@
     },
     { "matchDatasources": ["docker"], "labels": ["docker-deps"] },
     {
+      "description": "Treat Node runtime image bumps as real deps (fix), not chore. The dockerfile manager's node FROM updates fall through to chore via :semanticPrefixFixDepsChoreOthers (only npm/maven/python prod depTypes get fix); a runtime version change can affect the app, so override to fix.",
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["node"],
+      "semanticCommitType": "fix"
+    },
+    {
       "description": "Lock redis to 6.x to match our cloud instances",
       "matchDatasources": ["docker"],
       "matchPackageNames": ["redis"],
